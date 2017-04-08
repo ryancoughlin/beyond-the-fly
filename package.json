@@ -1,0 +1,24 @@
+{
+  "name": "beyond-the-fly",
+  "version": "1.0.0",
+  "description": "Pulls data from WordPress and displays it",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Ryan Coughlin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.0",
+    "dotenv": "^4.0.0",
+    "eslint-config-next": "^0.2.4",
+    "express": "^4.15.2",
+    "next": "^2.1.0",
+    "next-routes": "^1.0.24",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {}
+}
