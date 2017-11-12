@@ -5,28 +5,24 @@
   "version": "1.0.0-beta.6",
   "author": "Sebastien Fichot <fichot.sebastien@gmail.com>",
   "dependencies": {
+    "autoprefixer": "^7.1.6",
     "gatsby": "^1.9.45",
     "gatsby-image": "^1.0.4",
     "gatsby-link": "^1.6.21",
-    "gatsby-plugin-glamor": "^1.6.7",
+    "gatsby-plugin-postcss-sass": "^1.0.13",
     "gatsby-plugin-react-helmet": "^1.0.7",
-    "gatsby-plugin-sharp": "^1.6.7",
-    "gatsby-plugin-styled-components": "latest",
-    "gatsby-plugin-typography": "^1.7.9",
+    "gatsby-plugin-sass": "^1.0.13",
     "gatsby-source-wordpress": "^2.0.0",
-    "gatsby-transformer-sharp": "^1.6.5",
     "lodash": "^4.16.4",
-    "react-icons": "^2.2.5",
-    "typography-theme-wordpress-2013": "^0.15.10"
+    "postcss-import": "^11.0.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint":
+      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
@@ -34,6 +30,10 @@
     "predeploy": "gatsby build --prefix-paths"
   },
   "devDependencies": {
-    "eslint": "^4.1.1"
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
   }
 }
