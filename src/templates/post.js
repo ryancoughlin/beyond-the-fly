@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Img from 'gatsby-image'
+import ImageGrid from './components/image-grid'
 
 class PostTemplate extends Component {
   render() {
@@ -9,7 +9,7 @@ class PostTemplate extends Component {
       <div>
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        <Img sizes={post.acf.hero_image.localFile.childImageSharp.sizes} />
+        <ImageGrid post={post} />
       </div>
     )
   }
@@ -35,8 +35,22 @@ export const pageQuery = graphql`
                 srcWebp
                 srcSetWebp
                 sizes
-                originalImg
-                originalName
+              }
+            }
+          }
+        }
+        gallery {
+          localFile {
+            size
+            childImageSharp {
+              id
+              sizes {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
               }
             }
           }
