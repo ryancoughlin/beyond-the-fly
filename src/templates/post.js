@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Introduction from './components/introduction'
 import ImageGrid from './components/image-grid'
+import StackedImages from './components/full-width-image'
 
-class PostTemplate extends Component {
-  render() {
-    const post = this.props.data.wordpressPost
+const PostTemplate = ({ data }) => (
+  <div>
+    <div className="container">
+      <h1 dangerouslySetInnerHTML={{ __html: data.wordpressPost.title }} />
+      <Introduction text={data.wordpressPost.acf.introduction} />
 
-    return (
-      <div>
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        <ImageGrid post={post} />
-      </div>
-    )
-  }
-}
+      <ImageGrid post={data.wordpressPost} />
+      <StackedImages post={data.wordpressPost} />
+    </div>
+  </div>
+)
 
 export default PostTemplate
 
@@ -21,8 +21,8 @@ export const pageQuery = graphql`
   query currentPostQuery($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
-      content
       acf {
+        introduction
         hero_image {
           localFile {
             size
@@ -39,7 +39,23 @@ export const pageQuery = graphql`
             }
           }
         }
-        gallery {
+        photo_grid_masonry {
+          localFile {
+            size
+            childImageSharp {
+              id
+              sizes {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+        }
+        stacked_images {
           localFile {
             size
             childImageSharp {

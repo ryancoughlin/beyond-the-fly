@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import Link from "gatsby-link"
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
 
 class Home extends Component {
   render() {
@@ -29,7 +29,6 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          excerpt
           slug
         }
       }
