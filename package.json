@@ -1,12 +1,12 @@
 {
-  "name": "gatsby-example-using-wordpress",
+  "name": "beyond-the-fly",
   "private": true,
   "description": "Gatsby example site using the Wordpress source plugin",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0",
   "author": "Sebastien Fichot <fichot.sebastien@gmail.com>",
   "dependencies": {
     "autoprefixer": "^7.1.6",
-    "gatsby": "^1.9.45",
+    "gatsby": "^1.9.261",
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-glamor": "^1.6.8",
@@ -22,13 +22,14 @@
     "lodash": "^4.16.4",
     "postcss-import": "^11.0.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "dev": "gatsby develop",
-    "lint":
-      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
