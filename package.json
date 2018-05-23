@@ -7,7 +7,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.6",
     "gatsby": "^1.9.261",
-    "gatsby-image": "^1.0.24",
+    "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-glamor": "^1.6.8",
     "gatsby-plugin-postcss-sass": "^1.0.13",
