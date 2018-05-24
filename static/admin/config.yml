@@ -1,16 +1,25 @@
 backend:
-  name: test-repo
+  name: github
+  repo: ryancoughlin/beyond-the-fly
 
 media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: story
+    label: Story
+    folder: story
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "text"}
+      - {label: "Introduction", name: "introduction", widget: "string"}
+      - label: "First Page"
+        name: "image"
+        widget: "object"
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "URL", name: "url", widget: "image"}
+
+      - {label: "Full Width Image", name: "full_width_image", widget: "image"}
+      - {label: "Full Width Image", name: "thumbnail", widget: "image"}
