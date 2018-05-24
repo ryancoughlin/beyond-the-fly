@@ -1,46 +1,16 @@
 {
-  "name": "beyond-the-fly",
-  "private": true,
-  "description": "Gatsby example site using the Wordpress source plugin",
-  "version": "1.0.0",
-  "author": "Sebastien Fichot <fichot.sebastien@gmail.com>",
-  "dependencies": {
-    "autoprefixer": "^7.1.6",
-    "gatsby": "^1.9.261",
-    "gatsby-image": "^1.0.51",
-    "gatsby-link": "^1.6.21",
-    "gatsby-plugin-glamor": "^1.6.8",
-    "gatsby-plugin-postcss-sass": "^1.0.13",
-    "gatsby-plugin-react-helmet": "^1.0.7",
-    "gatsby-plugin-sass": "^1.0.13",
-    "gatsby-plugin-sharp": "^1.6.7",
-    "gatsby-plugin-styled-components": "latest",
-    "gatsby-remark-images": "^1.5.31",
-    "gatsby-source-wordpress": "^2.0.0",
-    "gatsby-transformer-remark": "^1.7.20",
-    "gatsby-transformer-sharp": "^1.6.5",
-    "lodash": "^4.16.4",
-    "postcss-import": "^11.0.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "name": "gatsby-starter-hello-world",
+  "description": "Gatsby hello world starter",
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
-    "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "start": "gatsby serve",
-    "predeploy": "gatsby build --prefix-paths"
+    "serve": "gatsby serve"
   },
-  "devDependencies": {
-    "eslint": "^4.11.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
+  "dependencies": {
+    "gatsby": "^1.9.250",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-netlify-cms": "^2.0.1",
+    "netlify-cms": "^1.8.1"
   }
 }
