@@ -25,3 +25,13 @@ collections:
 
       - {label: "Full Width Image", name: "full_width_image", widget: "image"}
       - {label: "Full Width Image", name: "thumbnail", widget: "image"}
+      
+      - label: "Tiled Image Gallery"
+        name: "tiled_image_gallery"
+        widget: "object"
+        fields:
+          - {label: "Image", name: "featured_image", widget: "image"}
+          - {label: "Image", name: "featured_image", widget: "image"}
+          - {label: "Image", name: "featured_image", widget: "image"}
+          - {label: "Image", name: "featured_image", widget: "image"}
+          - {label: "Image", name: "featured_image", widget: "image"}
