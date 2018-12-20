@@ -1,0 +1,10 @@
+
+.container {
+  background-image: url('/images/pattern.svg');
+  background-size: 60%;
+  background-color: #f2f2f2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
