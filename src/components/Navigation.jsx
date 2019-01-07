@@ -10,7 +10,6 @@ const Container = styled.div({
 
 export default ({data}) => (
   <Container>
-    <Img fixed={data.file.childImageSharp.fixed} />
   </Container>
 )
 
