@@ -61,6 +61,14 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: '/src/assets/images/'
+        },
+      }
+    },
+    {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'beyondthefly',
@@ -107,18 +115,12 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`,
+        name: 'images',
+        path: `${__dirname}/src/assets/images/`,
       },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'config/typography.js',
-      },
-    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',

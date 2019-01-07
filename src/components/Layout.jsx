@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { injectGlobal } from 'emotion/macro';
 import { ThemeProvider } from 'emotion-theming';
-import 'typeface-lora';
-import 'typeface-source-sans-pro';
-import { Footer, SEO } from 'components';
+import { Footer } from 'components';
 import { theme, reset } from 'styles';
 
 injectGlobal`
@@ -67,7 +65,6 @@ injectGlobal`
 const PureLayout = ({ children, data }) => (
   <ThemeProvider theme={theme}>
     <>
-      <SEO />
       {children}
       <Footer>
         <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
