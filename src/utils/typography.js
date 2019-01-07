@@ -24,7 +24,7 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  scaleRatio: 3,
+  scaleRatio: 2.6,
   headerWeight: 900,
   googleFonts: [
     {

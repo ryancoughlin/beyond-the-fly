@@ -6,11 +6,12 @@ import { StaticQuery, graphql } from 'gatsby';
 import { injectGlobal } from 'emotion/macro';
 import { ThemeProvider } from 'emotion-theming';
 import { Footer } from 'components';
-import { theme, reset } from 'styles';
+import { theme, reset, layout } from 'styles';
 import styled from '@emotion/styled/macro';
 
 injectGlobal`
   ${reset}
+  ${layout}
   a {
     color: ${theme.colors.primary};
     transition: all 0.4s ease-in-out;
@@ -31,7 +32,9 @@ injectGlobal`
 const Container = styled.div`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
-`;
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+  `;
 
 const PureLayout = ({ children, data }) => (
   <ThemeProvider theme={theme}>

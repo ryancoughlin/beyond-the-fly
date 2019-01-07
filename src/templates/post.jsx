@@ -16,6 +16,11 @@ const Metadata = styled.h6({
   margin: '0 24',
 })
 
+const Dot = styled.span({
+  marginLeft: 8,
+  marginRight: 8,
+})
+
 const IssueNumber = styled.span({
   color: theme.colors.primary,
   fontWeight: 700,
@@ -35,7 +40,7 @@ const Post = ({ data: { prismicStory, posts }, location }) => {
         {/* {categories && <Categories categories={categories} />} */}
         <Metadata>
           <IssueNumber>issue 0{data.issue_number}</IssueNumber>
-          ·
+          <Dot>·</Dot>
           {data.time_of_year.text}          
         </Metadata>
         <h1>{data.title.text}</h1>
