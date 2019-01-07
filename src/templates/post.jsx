@@ -24,7 +24,6 @@ const Post = ({ data: { prismicStory, posts }, location }) => {
       {data.date} — {categories && <Categories categories={categories} />}
       <Title>{data.title.text}</Title>
       <SliceZone allSlices={data.body} />
-      <Listing posts={posts.edges} />
     </Layout>
   );
 };
