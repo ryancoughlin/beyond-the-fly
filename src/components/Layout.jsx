@@ -11,22 +11,6 @@ import styled from '@emotion/styled/macro';
 
 injectGlobal`
   ${reset}
-  h1, h2, h3, h4, h5, h6 {
-    color: ${theme.colors.black};
-  }
-
-  h1 {
-    font-style: normal;
-    font-weight: 900;
-    font-size: 42px;
-    text-transform: uppercase;
-  }
-
-  p {
-    color: ${theme.colors.textColor};
-    font-size: 14px;
-  }
-
   a {
     color: ${theme.colors.primary};
     transition: all 0.4s ease-in-out;

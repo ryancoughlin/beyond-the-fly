@@ -24,7 +24,7 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  scaleRatio: 1.4,
+  scaleRatio: 3,
   headerWeight: 900,
   googleFonts: [
     {
@@ -35,6 +35,9 @@ const typography = new Typography({
     },
   ],
   overrideStyles: () => ({
+    h1: {
+      textTransform: 'uppercase',
+    },
     img: {
       marginBottom: 0,
     },
