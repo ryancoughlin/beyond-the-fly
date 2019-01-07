@@ -2,13 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
+import theme from '../styles/theme';
 import { Layout, SliceZone, Navigation } from 'components';
 import Categories from '../components/Listing/Categories';
 
-const Title = styled.h1({
+const Introduction = styled.div({
   maxWidth: 700,
   textAlign: 'center',
   margin: '0 auto',
+})
+
+const Metadata = styled.h6({
+  margin: '0 24',
+})
+
+const IssueNumber = styled.span({
+  color: theme.colors.primary,
+  fontWeight: 700,
 })
 
 const Post = ({ data: { prismicStory, posts }, location }) => {
@@ -20,8 +30,16 @@ const Post = ({ data: { prismicStory, posts }, location }) => {
   return (
     <Layout>
       <Navigation />
-      {data.date} — {categories && <Categories categories={categories} />}
-      <Title>{data.title.text}</Title>
+
+      <Introduction>
+        {/* {categories && <Categories categories={categories} />} */}
+        <Metadata>
+          <IssueNumber>issue 0{data.issue_number}</IssueNumber>
+          ·
+          {data.time_of_year.text}          
+        </Metadata>
+        <h1>{data.title.text}</h1>
+      </Introduction>
       <SliceZone allSlices={data.body} />
     </Layout>
   );
@@ -47,6 +65,10 @@ export const pageQuery = graphql`
         title {
           text
         }
+        issue_number,
+        time_of_year {
+          text
+        },
         date(formatString: "DD.MM.YYYY")
         categories {
           category {

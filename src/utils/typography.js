@@ -38,6 +38,11 @@ const typography = new Typography({
     h1: {
       textTransform: 'uppercase',
     },
+    h6: {
+      textTransform: 'uppercase',
+      fontWeight: 400,
+      letterSpacing: 0.3,
+    },
     img: {
       marginBottom: 0,
     },
