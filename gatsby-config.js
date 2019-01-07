@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `chivo\:400,700`
+          `chivo\:400,700,900`
         ]
       }
     },

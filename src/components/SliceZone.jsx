@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyText, CodeBlock, Image, Quote } from 'slices';
+import { BodyText, Image, Quote } from 'slices';
 import styled from '@emotion/styled/macro';
-import { prism } from 'styles';
 
 const Content = styled.div`
-  ${prism};
   padding: 6rem 0;
   p,
   li {
     letter-spacing: -0.003em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 1.58;
     code {
       padding: 0.2rem 0.5rem;
@@ -38,8 +36,6 @@ export default class SliceZone extends Component {
         // These are the API IDs of the slices
         case 'text':
           return <BodyText key={s.id} input={s} />;
-        case 'code_block':
-          return <CodeBlock key={s.id} input={s} />;
         case 'image':
           return <Image key={s.id} input={s} />;
         case 'quote':

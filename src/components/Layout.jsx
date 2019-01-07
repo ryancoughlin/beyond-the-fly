@@ -7,6 +7,7 @@ import { injectGlobal } from 'emotion/macro';
 import { ThemeProvider } from 'emotion-theming';
 import { Footer } from 'components';
 import { theme, reset } from 'styles';
+import styled from '@emotion/styled/macro';
 
 injectGlobal`
   ${reset}
@@ -18,13 +19,27 @@ injectGlobal`
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    color: ${theme.colors.greyDarker};
+    color: ${theme.colors.gray};
     background-color: ${theme.colors.bg};
+    font-family: chivo;
   }
   ::selection {
     color: ${theme.colors.bg};
     background-color: ${theme.colors.primary};
   }
+
+  h1 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 42px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: ${theme.colors.textColor};
+    font-size: 14px;
+  }
+
   a {
     color: ${theme.colors.primary};
     transition: all 0.4s ease-in-out;
@@ -62,14 +77,19 @@ injectGlobal`
   }
 `;
 
+const Container = styled.div`
+  max-width: ${props => props.theme.maxWidth};
+  margin: 0 auto;
+`;
+
 const PureLayout = ({ children, data }) => (
   <ThemeProvider theme={theme}>
-    <>
+    <Container>
       {children}
-      <Footer>
-        <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
-      </Footer>
-    </>
+    </Container>
+    <Footer>
+      <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
+    </Footer>
   </ThemeProvider>
 );
 

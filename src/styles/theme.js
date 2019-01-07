@@ -5,11 +5,9 @@ const theme = {
     black: '#000',
     greyLight: '#EBEDF2',
     greyBlue: '#a2bce2',
-    grey: '#595C62',
-    greyDark: '#303643',
-    greyDarker: '#1c252b',
+    textColor: '#666666',
   },
-  maxWidth: '1000px',
+  maxWidth: '1400px',
   maxWidthText: '720px',
   breakpoints: {
     xs: '400px',
