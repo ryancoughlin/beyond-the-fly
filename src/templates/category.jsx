@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-import { Layout, Listing, Wrapper, Title, SEO, Header } from 'components';
-import website from '../../config/website';
+import { Layout, Listing, Wrapper, Title, SEO, Navigation } from 'components';
 
 const Hero = styled.section`
   background-color: ${props => props.theme.colors.primary};
@@ -33,10 +32,10 @@ const Category = ({
   location,
 }) => (
   <Layout>
-    <SEO title={`${category} | ${website._title}`} pathname={location.pathname} />
+    <SEO title={`${category}`} pathname={location.pathname} />
     <Hero>
       <Wrapper>
-        <Header invert />
+        <Navigation />
         <Headline>Category</Headline>
         <h1>{category}</h1>
       </Wrapper>

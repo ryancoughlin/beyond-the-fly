@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-import { Layout, Listing, SliceZone, Navigation } from 'components';
+import { Layout, SliceZone, Navigation } from 'components';
 import Categories from '../components/Listing/Categories';
-import website from '../../config/website';
 
 const Title = styled.h1({
   maxWidth: 700,

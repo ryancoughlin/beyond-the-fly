@@ -14,19 +14,6 @@ injectGlobal`
   h1, h2, h3, h4, h5, h6 {
     color: ${theme.colors.black};
   }
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  body {
-    color: ${theme.colors.gray};
-    background-color: ${theme.colors.bg};
-    font-family: chivo;
-  }
-  ::selection {
-    color: ${theme.colors.bg};
-    background-color: ${theme.colors.primary};
-  }
 
   h1 {
     font-style: normal;

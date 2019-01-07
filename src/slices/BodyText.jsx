@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
 
-const Content = styled.div`
+const BodyTextContainer = styled.div`
   max-width: ${props => props.theme.maxWidthText};
 `;
 
-const BodyText = ({ input }) => <Content dangerouslySetInnerHTML={{ __html: input.primary.text.html }} />;
+const BodyText = ({ input }) => <BodyTextContainer dangerouslySetInnerHTML={{ __html: input.primary.text.html }} />;
 
 export default BodyText;
 

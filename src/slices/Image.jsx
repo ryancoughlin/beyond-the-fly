@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
 import Img from 'gatsby-image';
 
-const Content = styled.div`
+const ImageContainer = styled.div`
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 `;
 
 const Image = ({ input }) => (
-  <Content>
+  <ImageContainer>
     <Img fluid={input.primary.image.localFile.childImageSharp.fluid} />
-  </Content>
+  </ImageContainer>
 );
 
 export default Image;
