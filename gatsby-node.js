@@ -29,34 +29,14 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   const postTemplate = path.resolve('src/templates/post.jsx');
-  const categoryTemplate = path.resolve('src/templates/category.jsx');
-
-  const categorySet = new Set();
   const postsList = pages.data.allPrismicStory.edges;
 
   postsList.forEach(edge => {
-    if (edge.node.data.categories[0].category) {
-      edge.node.data.categories.forEach(cat => {
-        categorySet.add(cat.category.document[0].data.name);
-      });
-    }
-
     createPage({
       path: `/${edge.node.uid}`,
       component: postTemplate,
       context: {
         uid: edge.node.uid,
-      },
-    });
-  });
-
-  const categoryList = Array.from(categorySet);
-  categoryList.forEach(category => {
-    createPage({
-      path: `/categories/${_.kebabCase(category)}`,
-      component: categoryTemplate,
-      context: {
-        category,
       },
     });
   });
