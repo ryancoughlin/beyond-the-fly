@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyText, Image, Quote, Video } from 'slices';
+import { BodyText, Image, Quote, Video, PhotoGallery } from 'slices';
 import styled from '@emotion/styled/macro';
 
 const Content = styled.div`
@@ -33,7 +33,6 @@ export default class SliceZone extends Component {
     const { allSlices } = this.props;
     const slice = allSlices.map(s => {
       switch (s.slice_type) {
-        // These are the API IDs of the slices
         case 'text':
           return <BodyText key={s.id} input={s} />;
         case 'image':
@@ -42,7 +41,8 @@ export default class SliceZone extends Component {
           return <Quote key={s.id} input={s} />;
         case 'video':
           return <Video key={s.id} input={s} />;
-          return
+        case 'image_gallery':
+          return <PhotoGallery key={s.id} input={s} />;
         default:
           return null;
       }

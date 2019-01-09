@@ -43,7 +43,9 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-player": "^1.8.0",
+    "react-slick": "^0.23.2",
     "react-typography": "^0.16.18",
+    "slick-carousel": "^1.8.1",
     "typeface-lora": "^0.0.54",
     "typeface-source-sans-pro": "^0.0.54",
     "typography": "^0.16.18"
