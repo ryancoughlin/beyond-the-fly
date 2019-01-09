@@ -13,14 +13,14 @@ export default ({data}) => (
   </Container>
 )
 
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "logo-colored.png" }) {
-      childImageSharp { 
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     file(relativePath: { eq: "logo-colored.png" }) {
+//       childImageSharp { 
+//         fixed(width: 125, height: 125) {
+//           ...GatsbyImageSharpFixed
+//         }
+//       }
+//     }
+//   }
+// `

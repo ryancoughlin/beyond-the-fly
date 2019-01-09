@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyText, Image, Quote } from 'slices';
+import { BodyText, Image, Quote, Video } from 'slices';
 import styled from '@emotion/styled/macro';
 
 const Content = styled.div`
@@ -40,6 +40,9 @@ export default class SliceZone extends Component {
           return <Image key={s.id} input={s} />;
         case 'quote':
           return <Quote key={s.id} input={s} />;
+        case 'video':
+          return <Video key={s.id} input={s} />;
+          return
         default:
           return null;
       }

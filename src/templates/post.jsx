@@ -104,6 +104,36 @@ export const pageQuery = graphql`
               }
             }
           }
+          ... on PrismicStoryBodyVideo {
+            slice_type
+            id
+            primary {
+              video {
+                type
+                version
+                provider_name
+                provider_url
+                title
+                author_name
+                author_url
+                is_plus
+                account_type
+                html
+                width
+                height
+                duration
+                description
+                thumbnail_url
+                thumbnail_width
+                thumbnail_height
+                thumbnail_url_with_play_button
+                upload_date
+                video_id
+                uri
+                embed_url
+              }
+            }
+          }
           ... on PrismicStoryBodyImage {
             slice_type
             id
