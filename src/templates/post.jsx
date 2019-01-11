@@ -128,7 +128,7 @@ export const pageQuery = graphql`
               image {
                 localFile {
                   childImageSharp {
-                    fluid {
+                    fluid(maxWidth: 1200, quality: 90) {
                       sizes
                       src
                       srcSet
