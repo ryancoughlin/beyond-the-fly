@@ -7,6 +7,11 @@ const layout = css`
     -moz-osx-font-smoothing: grayscale;
   }
   body {
+    background-color: ${theme.colors.black};    
+    color: ${theme.colors.textColor};
+  }
+
+  p, h1, h2, h3 {
     color: ${theme.colors.textColor};
   }
 `;

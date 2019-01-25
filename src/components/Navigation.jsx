@@ -8,7 +8,7 @@ const Container = styled.div({
   display: 'flex',
   justifyContent: 'center',
   marginTop: 48,
-  marginBottom: 64,
+  marginBottom: 48,
 })
 
 export default ({data}) => (

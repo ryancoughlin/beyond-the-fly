@@ -25,6 +25,26 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      prismicAbout {
+        id,
+        data {
+          about_us {
+            text
+          }
+          summary {
+            text
+          }
+          image {
+            localFile {
+              id
+              size
+              childImageSharp {
+                id
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -40,7 +60,19 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  const pageTemplate = path.resolve('src/pages/About.jsx');
+  const aboutPageData = pages.data.prismicAbout.data;
+
+  createPage({
+    path: "about",
+    component: pageTemplate,
+    context: {
+      uid: aboutPageData.id,
+    },
+  });
 };
+
 
 /* Allow us to use something like: import { X } from 'directory' instead of '../../folder/directory' */
 exports.onCreateWebpackConfig = ({ actions }) => {

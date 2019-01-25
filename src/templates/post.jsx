@@ -94,6 +94,9 @@ export const pageQuery = graphql`
               text {
                 html
               }
+              header {
+                text
+              }
             }
           }
           ... on PrismicStoryBodyQuote {

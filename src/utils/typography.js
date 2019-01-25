@@ -1,4 +1,6 @@
 import Typography from 'typography';
+import theme from '../styles/theme';
+
 
 const typography = new Typography({
   title: 'Beyond the Fly',
@@ -24,7 +26,7 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  scaleRatio: 2.6,
+  scaleRatio: 2.4,
   headerWeight: 900,
   googleFonts: [
     {
@@ -36,7 +38,11 @@ const typography = new Typography({
   ],
   overrideStyles: () => ({
     h1: {
+      color: theme.colors.textColor,
       textTransform: 'uppercase',
+    },
+    h3: {
+      color: theme.colors.highlightColor,
     },
     h6: {
       textTransform: 'uppercase',
