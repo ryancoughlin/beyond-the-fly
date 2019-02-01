@@ -17,8 +17,8 @@ export default class PhotoGallery extends React.Component {
     return (
       <Slider {...settings}>
       {
-        this.props.input.items.map(image => {
-          return <Img fluid={image.image.localFile.childImageSharp.fluid} />
+        this.props.input.gallery.map(image => {
+          return <Img fluid={image} />
         })
       }
       </Slider>

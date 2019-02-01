@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: '.env.${process.env.NODE_ENV}',
 });
 
 const { RichText } = require('prismic-reactjs');
@@ -22,40 +22,24 @@ const {
 } = require('./src/utils/website');
 
 module.exports = {
-  /* General Information */
-  pathPrefix: _pathPrefix,
-  siteMetadata: {
-    title: _title,
-    titleAlt: _titleAlt,
-    shortName,
-    author,
-    siteLanguage,
-    logo, // Logo for JSONLD
-    url: _url,
-    siteUrl: _url + _pathPrefix, // For gatsby-plugin-sitemap
-    pathPrefix: _pathPrefix,
-    description,
-    banner: logo,
-    twitter,
-  },
-  /* Plugins */
   plugins: [
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
+    'gatsby-transformer-remark',
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          `chivo\:400,700,900`
+          'chivo\:400,700,900'
         ]
       }
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: 'src/utils/typography',
       },
     },
     {
@@ -67,52 +51,21 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-prismic',
+      resolve: 'gatsby-source-datocms',
       options: {
-        repositoryName: 'beyondthefly',
-        accessToken: `${process.env.API_KEY}`,
-        linkResolver: () => post => `/${post.uid}`,
-        htmlSerializer: () => (type, element, content) => {
-          switch (type) {
-            // First differentiate between a label and a preformatted field (e.g. the Code Block slice)
-            case Elements.label: {
-              // Use the blockquote for labels with the name "quote"
-              if (element.data.label === 'quote') {
-                return `<blockquote><p>${content}</p></blockquote>`;
-              }
-              return null;
-            }
-            default: {
-              return null;
-            }
-          }
-        },
+        apiToken: '29bd5f384defb9b5e0088af82b037b',
+        previewMode: true,
+        disableLiveReload: false,
       },
     },
     'gatsby-plugin-lodash',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
-        path: `${__dirname}/src/assets/images`,
+        name: `images`,
+        path: `${__dirname}/src/assets/images/`,
       },
     },
-    'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: _title,
-        short_name: _titleAlt,
-        description,
-        start_url: _pathPrefix,
-        background_color: backgroundColor,
-        theme_color: themeColor,
-        display: 'standalone',
-        icon: favicon,
-      },
-    },
-    // Must be placed at the end
-    'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
   ],
 };

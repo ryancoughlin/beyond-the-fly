@@ -1,189 +1,66 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import styled from '@emotion/styled/macro';
-import theme from '../styles/theme';
-import { Layout, SliceZone, Navigation } from 'components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from 'react'
+import Slider from 'react-slick'
+import { HelmetDatoCms } from 'gatsby-source-datocms'
+import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import ModularContent from '../components/ModularContent'
 
+export default ({ data }) => (
+  <Layout>
+    <article className="sheet">
+      <div className="sheet__inner">
+        <h1 className="sheet__title">{data.datoCmsStory.title}</h1>
+				{console.log('TCL: data.dataCmsStory', data.datoCmsStory.content)}
 
-const Introduction = styled.div({
-  maxWidth: 700,
-  textAlign: 'center',
-  margin: '0 auto',
-})
+        <ModularContent data={data.datoCmsStory.content} />
 
-const Metadata = styled.h6({
-  margin: '0 24',
-})
+        <div className="sheet__slider">
+          {/* <Slider infinite={true} slidesToShow={2} arrows>
+            {data.datoCmsStory.gallery.map(({ fluid }) => (
+              <img alt={data.datoCmsStory.title} key={fluid.src} src={fluid.src} />
+            ))}
+          </Slider> */}
+        </div>
+      </div>
+    </article>
+  </Layout>
+)
 
-const Dot = styled.span({
-  marginLeft: 8,
-  marginRight: 8,
-})
-
-const IssueNumber = styled.span({
-  color: theme.colors.primary,
-  fontWeight: 700,
-})
-
-const Post = ({ data: { prismicStory, posts }, location }) => {
-  const { data } = prismicStory;
-  let categories = false;
-  if (data.categories[0].category) {
-    categories = data.categories.map(c => c.category.document[0].data.name);
-  }
-  return (
-    <Layout>
-      <Navigation />
-
-      <Introduction>
-        {/* {categories && <Categories categories={categories} />} */}
-        <Metadata>
-          <IssueNumber>issue 0{data.issue_number}</IssueNumber>
-          <Dot>·</Dot>
-          {data.time_of_year.text}          
-        </Metadata>
-        <h1>{data.title.text}</h1>
-      </Introduction>
-      <SliceZone allSlices={data.body} />
-    </Layout>
-  );
-};
-
-export default Post;
-
-Post.propTypes = {
-  data: PropTypes.shape({
-    prismicStory: PropTypes.object.isRequired,
-  }).isRequired,
-  location: PropTypes.object.isRequired,
-};
-
-// The typenames come from the slice names
-// If this doesn't work for you query for __typename in body {} and GraphiQL will show them to you
-
-export const pageQuery = graphql`
-  query PostBySlug($uid: String!) {
-    prismicStory(uid: { eq: $uid }) {
-      uid
-      data {
-        title {
-          text
+export const query = graphql`
+  query StoryQuery($slug: String!) {
+    datoCmsStory(slug: { eq: $slug }) {
+      title
+      content {
+        ... on DatoCmsText {
+          model {
+            apiKey
+          }
+          header
+          body
         }
-        issue_number,
-        time_of_year {
-          text
-        },
-        date(formatString: "DD.MM.YYYY")
-        categories {
-          category {
-            document {
-              data {
-                name
-              }
+        ... on DatoCmsImage {
+          model {
+            apiKey
+          }
+          image {
+            fluid(maxWidth: 1200, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
+          caption
         }
-        body {
-          ... on PrismicStoryBodyText {
-            slice_type
-            id
-            primary {
-              text {
-                html
-              }
-              header {
-                text
-              }
-            }
+        ... on DatoCmsGallery {
+          model {
+            apiKey
           }
-          ... on PrismicStoryBodyQuote {
-            slice_type
-            id
-            primary {
-              quote {
-                html
-                text
-              }
-            }
-          }
-          ... on PrismicStoryBodyVideo {
-            slice_type
-            id
-            primary {
-              video {
-                html
-                description
-                thumbnail_url
-                thumbnail_width
-
-                uri
-                embed_url
-              }
-            }
-          }
-          ... on PrismicStoryBodyImageGallery {
-            slice_type
-            id
-            items {
-              image {
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1200, quality: 90) {
-                      sizes
-                      src
-                      srcSet
-                      srcSetWebp
-                      srcWebp
-                      originalImg
-                      aspectRatio
-                    }
-                  }
-                }
-              }
-            }
-          }
-          ... on PrismicStoryBodyImage {
-            slice_type
-            id
-            primary {
-              image {
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1200, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    posts: allPrismicStory(limit: 2, sort: { fields: [data___date], order: DESC }) {
-      edges {
-        node {
-          uid
-          data {
-            title {
-              text
-            }
-            date(formatString: "DD.MM.YYYY")
-            categories {
-              category {
-                document {
-                  data {
-                    name
-                  }
-                }
-              }
+          gallery {
+            fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
         }
       }
     }
   }
-`;
+`

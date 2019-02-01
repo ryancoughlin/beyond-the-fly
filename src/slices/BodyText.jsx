@@ -9,9 +9,11 @@ const Container = styled.div`
 
 const BodyText = ({ input }) => (
   <Container>
-    <h3>{input.primary.header.text}</h3>
-		{console.log('​input.primary.header', input)}
-    <div dangerouslySetInnerHTML={{ __html: input.primary.text.html }} />
+    { 
+      input.header &&
+        <h3>{input.header}</h3>
+    }
+    <div dangerouslySetInnerHTML={{ __html: input.body }} />
   </Container>
 ) 
 

@@ -1,36 +1,25 @@
-import React, { Component } from 'react';
-import styled from '@emotion/styled/macro';
-import { graphql } from 'gatsby';
-import { Layout, Navigation } from 'components';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-class About extends Component {
-  render() {
-    const {
-      data: { about, },
-    } = this.props;
-    return (
-      <Layout>
-        <Navigation />
-        <h1>{about.data.about_us.text}</h1>
-        <p>{about.data.summary.text}</p>
-      </Layout>
-    );
-  }
-}
+const About = ({ data: { about } }) => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: about.aboutUsNode.childMarkdownRemark.html
+    }}
+  ></div>
+)
 
-export default About;
+export default About
 
-export const pageQuery = graphql`
+export const query = graphql`
   query AboutQuery {
-    about: prismicAbout {
-      data {
-        about_us {
-          text
-        }
-        summary {
-          text
+    about: datoCmsAbout {
+      title
+      aboutUsNode {
+        childMarkdownRemark {
+          html
         }
       }
     }
   }
-`;
+`

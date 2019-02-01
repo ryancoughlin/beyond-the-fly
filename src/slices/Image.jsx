@@ -13,7 +13,8 @@ const ImageContainer = styled.div`
 
 const Image = ({ input }) => (
   <ImageContainer>
-    <Img fluid={input.primary.image.localFile.childImageSharp.fluid} />
+		{console.log('TCL: input', input)}
+    <Img fluid={input.image.fluid} />
   </ImageContainer>
 );
 
