@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
 
 const Container = styled.div`
-  max-width: ${props => props.theme.maxWidthText};
+  max-width: 600px;
   margin: 56px auto;
 `;
 

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
+import Navigation from '../components/Navigation'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery query={graphql`
@@ -18,16 +19,8 @@ const TemplateWrapper = ({ children }) => (
   `}
   render={data => (
     <div className="container">
-      <div className="container__body">
-        <div className="container__mobile-header">
-          <div className="mobile-header">
-            <div className="mobile-header__menu">
-              <Link to="#" data-js="toggleSidebar" />
-            </div>
-          </div>
-        </div>
+        <Navigation />
         {children}
-      </div>
     </div>
     )}
   />
