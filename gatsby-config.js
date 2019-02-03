@@ -2,9 +2,6 @@ require('dotenv').config({
   path: '.env.${process.env.NODE_ENV}',
 });
 
-const { RichText } = require('prismic-reactjs');
-const { Elements } = RichText;
-
 const {
   _pathPrefix,
   shortName,
