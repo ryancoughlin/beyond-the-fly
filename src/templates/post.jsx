@@ -94,6 +94,13 @@ export const query = graphql`
             }
           }
         }
+        ... on DatoCmsQuote {
+          quote
+          who
+          model {
+            apiKey
+          }
+        }
       }
     }
   }

@@ -26,6 +26,8 @@ const TemplateWrapper = ({ children }) => (
       <Global
         styles={css`
           body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             background-color: ${Colors.Global.Background};
             color: ${Colors.Global.Text};
           }
