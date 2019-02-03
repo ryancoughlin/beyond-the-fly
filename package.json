@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-prismicio",
-  "description": "Gatsby Starter for Prismic.io",
+  "name": "beyond-the-fly",
+  "description": "Beyond the Fly",
   "license": "MIT",
   "version": "1.0.0",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "Ryan Coughlin",
   "scripts": {
     "dev": "gatsby develop -o",
     "build": "gatsby build",
