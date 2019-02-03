@@ -14,7 +14,8 @@ const Container = styled.div({
 const Spread = styled.div({
   justifyContent: 'space-between',
   display: 'flex',
-  maxWidth: 800,
+  maxWidth: 500,
+  alignItems: 'center',
   flex: 1,
   'a' : {
     color: 'white',
