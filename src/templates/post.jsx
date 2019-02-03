@@ -41,7 +41,7 @@ export default ({ data }) => (
   <Layout>
     <Hero>
       <Metadata>
-        <IssueNumber>{data.datoCmsStory.issueNumber}</IssueNumber>
+        <IssueNumber> Issue {data.datoCmsStory.issueNumber}</IssueNumber>
         <Dot>·</Dot>
         {data.datoCmsStory.timeOfYear}
       </Metadata> 
@@ -84,7 +84,7 @@ export const query = graphql`
             apiKey
           }
           gallery {
-            fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress", crop: "entropy" }) {
+            fluid(maxWidth: 1100, maxHeight: 600, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }
           }

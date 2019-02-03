@@ -6,16 +6,16 @@ export default class ModularContent extends Component {
   render() {
     const { data } = this.props;
 		console.log('TCL: data -> render -> data', data)
-    const content = data.map(s => {
+    const content = data.map((s, index) => {
       switch (s.model.apiKey) {
         case 'text':
-          return <BodyText key={s.id} input={s} />;
+          return <BodyText key={index} input={s} />;
         case 'image':
-          return <Image key={s.id} input={s} />;
+          return <Image key={index} input={s} />;
         case 'quote':
-          return <Quote key={s.id} input={s} />;
+          return <Quote key={index} input={s} />;
         case 'gallery':
-          return <PhotoGallery key={s.id} input={s} />;
+          return <PhotoGallery key={index} input={s} />;
         default:
           return null;
       }
