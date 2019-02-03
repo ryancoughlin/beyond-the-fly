@@ -22,7 +22,7 @@ const TemplateWrapper = ({ children }) => (
     }
   `}
   render={data => (
-    <React.Fragment>
+    <>
       <Global
         styles={css`
           body {
@@ -49,7 +49,7 @@ const TemplateWrapper = ({ children }) => (
       />
       <Navigation />
       {children}
-    </React.Fragment>
+    </>
     )}
   />
 )
