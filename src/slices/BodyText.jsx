@@ -10,7 +10,6 @@ const Container = styled.div`
 
 const BodyText = ({ input }) => (
   <Container>
-    <Global 
     { 
       input.header &&
         <h3>{input.header}</h3>

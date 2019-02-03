@@ -11,7 +11,20 @@ const Container = styled.div({
   marginBottom: 100,
 })
 
-export default ({data}) => (
+const Spread = styled.div({
+  justifyContent: 'space-between',
+  display: 'flex',
+  maxWidth: 800,
+  flex: 1,
+  'a' : {
+    color: 'white',
+    fontSize: 12,
+    textDecoration: 'none',
+  }
+})
+
+export default ({data}) =>
+ (
   <StaticQuery
     query={graphql`
       query LogoQuery {
@@ -26,7 +39,11 @@ export default ({data}) => (
     `}
     render={data => (
     <Container>
-      <Link to="/"><Img fixed={data.file.childImageSharp.fixed} /></Link>
+      <Spread>
+        <Link to="/">Home</Link>
+        <Link to="/"><Img fixed={data.file.childImageSharp.fixed} /></Link>
+        <Link to="/">About</Link>
+      </Spread>
     </Container>
     )}
   />
