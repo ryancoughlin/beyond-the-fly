@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
 import Navigation from '../components/Navigation'
+import '../styles'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery query={graphql`

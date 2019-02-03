@@ -1,12 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
 const About = ({ data: { about } }) => (
-  <div
-    dangerouslySetInnerHTML={{
-      __html: about.aboutUsNode.childMarkdownRemark.html
-    }}
-  ></div>
+  <Layout>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: about.aboutUsNode.childMarkdownRemark.html
+      }}
+    ></div>
+  </Layout>
 )
 
 export default About

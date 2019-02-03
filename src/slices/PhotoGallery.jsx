@@ -12,8 +12,6 @@ export default class PhotoGallery extends React.Component {
       slidesToScroll: 1
     };
 
-    console.log(this.props.input)
-
     return (
       <Slider {...settings}>
       {
