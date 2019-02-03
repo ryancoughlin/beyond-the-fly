@@ -1,5 +1,5 @@
 import Typography from 'typography';
-import theme from '../styles/theme';
+import {Colors} from '../styles/theme';
 
 
 const typography = new Typography({
@@ -38,11 +38,11 @@ const typography = new Typography({
   ],
   overrideStyles: () => ({
     h1: {
-      color: theme.colors.textColor,
+      color: Colors.Global.Text,
       textTransform: 'uppercase',
     },
     h3: {
-      color: theme.colors.highlightColor,
+      color: Colors.Global.Highlight,
     },
     h6: {
       textTransform: 'uppercase',

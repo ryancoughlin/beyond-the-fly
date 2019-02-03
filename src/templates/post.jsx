@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby'
-import theme from '../styles/theme';
+import {Colors} from '../styles/theme';
 import Layout from '../components/Layout'
 import ModularContent from '../components/ModularContent'
 
 const Hero = styled.div({
   display: 'flex',
   alignItems: 'center',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  maxWidth: 760,
+  margin: '0 auto'
 })
 
 const Introduction = styled.div({
@@ -27,8 +29,12 @@ const Dot = styled.span({
 })
 
 const IssueNumber = styled.span({
-  color: theme.colors.primary,
+  color: Colors.Global.Primary,
   fontWeight: 700,
+})
+
+const Title = styled.h1({
+  textAlign: 'center',
 })
 
 export default ({ data }) => (
@@ -39,7 +45,7 @@ export default ({ data }) => (
         <Dot>·</Dot>
         {data.datoCmsStory.timeOfYear}
       </Metadata> 
-      <h1 className="sheet__title">{data.datoCmsStory.title}</h1>
+      <Title>{data.datoCmsStory.title}</Title>
       <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
     </Hero>
 
@@ -67,7 +73,7 @@ export const query = graphql`
             apiKey
           }
           image {
-            fluid(maxWidth: 1200, imgixParams: { fm: "jpg", auto: "compress" }) {
+            fluid(maxWidth: 1100, maxHeight: 600, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -78,7 +84,7 @@ export const query = graphql`
             apiKey
           }
           gallery {
-            fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+            fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress", crop: "entropy" }) {
               ...GatsbyDatoCmsFluid
             }
           }

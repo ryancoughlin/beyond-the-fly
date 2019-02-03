@@ -8,7 +8,7 @@ const Container = styled.div({
   display: 'flex',
   justifyContent: 'center',
   marginTop: 48,
-  marginBottom: 48,
+  marginBottom: 100,
 })
 
 export default ({data}) => (
@@ -17,7 +17,7 @@ export default ({data}) => (
       query LogoQuery {
         file(relativePath: { eq: "logo-colored.png" }) {
           childImageSharp { 
-            fixed(width: 180) {
+            fixed(height: 34) {
               ...GatsbyImageSharpFixed
             }
           }

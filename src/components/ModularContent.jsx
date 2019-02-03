@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyText, Image, Quote, Video, PhotoGallery } from '../slices';
+import { BodyText, Image, Quote, PhotoGallery } from '../slices';
 
 export default class ModularContent extends Component {
   render() {

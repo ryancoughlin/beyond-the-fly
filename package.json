@@ -14,7 +14,7 @@
     "lint:md": "prettier --write *.md"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.5",
+    "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.5",
     "@emotion/styled-base": "^10.0.5",
     "emotion": "^10.0.5",
@@ -35,9 +35,6 @@
     "gatsby-source-filesystem": "^2.0.17",
     "gatsby-transformer-remark": "^2.2.2",
     "gatsby-transformer-sharp": "^2.1.4",
-    "lodash": "^4.17.11",
-    "prismic-reactjs": "^0.3.1",
-    "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -46,8 +43,6 @@
     "react-slick": "^0.23.2",
     "react-typography": "^0.16.18",
     "slick-carousel": "^1.8.1",
-    "typeface-lora": "^0.0.54",
-    "typeface-source-sans-pro": "^0.0.54",
     "typography": "^0.16.18"
   },
   "devDependencies": {
