@@ -8,10 +8,6 @@ import styled from '@emotion/styled'
 import "../../node_modules/slick-carousel/slick/slick.css"
 import "../../node_modules/slick-carousel/slick/slick-theme.css"
 
-const Container = styled.div({
-  backgroundColor: Colors.Global.Background
-});
-
 const TemplateWrapper = ({ children }) => (
   <StaticQuery query={graphql`
     {
@@ -26,7 +22,7 @@ const TemplateWrapper = ({ children }) => (
     }
   `}
   render={data => (
-    <Container>
+    <React.Fragment>
       <Global
         styles={css`
           body {
@@ -53,7 +49,7 @@ const TemplateWrapper = ({ children }) => (
       />
       <Navigation />
       {children}
-    </Container>
+    </React.Fragment>
     )}
   />
 )
