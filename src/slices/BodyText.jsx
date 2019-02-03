@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import {Global, css} from '@emotion/core';
 
 const Container = styled.div`
   max-width: 600px;
@@ -9,11 +10,12 @@ const Container = styled.div`
 
 const BodyText = ({ input }) => (
   <Container>
+    <Global 
     { 
       input.header &&
         <h3>{input.header}</h3>
     }
-    <div dangerouslySetInnerHTML={{ __html: input.body }} />
+    <div dangerouslySetInnerHTML={{ __html: input.bodyNode.childMarkdownRemark.html }} />
   </Container>
 ) 
 

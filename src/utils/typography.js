@@ -43,6 +43,7 @@ const typography = new Typography({
     },
     h3: {
       color: Colors.Global.Highlight,
+      fontWeight: 500,
     },
     h6: {
       textTransform: 'uppercase',

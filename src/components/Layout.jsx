@@ -31,9 +31,24 @@ const TemplateWrapper = ({ children }) => (
         styles={css`
           body {
             background-color: ${Colors.Global.Background};
-            color: ${Colors.Global.Text}
+            color: ${Colors.Global.Text};
           }
-        
+          ul {
+            margin-left: 0;
+          }
+          li {
+            list-style-type: none;
+            position: relative;
+          }
+          li:before {
+            position: absolute;
+            content: "";
+            background-color: ${Colors.Global.Highlight};
+            width: 4px;
+            height: 4px;
+            top: 9px;
+            left: -16px;
+          }
         `}
       />
       <Navigation />

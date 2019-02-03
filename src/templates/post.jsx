@@ -16,7 +16,7 @@ const Hero = styled.div({
 const Introduction = styled.div({
   maxWidth: 700,
   textAlign: 'center',
-  margin: '0 auto',
+  margin: '48px auto 48px auto',
 })
 
 const Metadata = styled.h6({
@@ -35,6 +35,7 @@ const IssueNumber = styled.span({
 
 const Title = styled.h1({
   textAlign: 'center',
+  marginBottom: 0
 })
 
 export default ({ data }) => (
@@ -66,14 +67,18 @@ export const query = graphql`
             apiKey
           }
           header
-          body
+          bodyNode {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
         ... on DatoCmsImage {
           model {
             apiKey
           }
           image {
-            fluid(maxWidth: 1100, maxHeight: 600, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
+            fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -84,7 +89,7 @@ export const query = graphql`
             apiKey
           }
           gallery {
-            fluid(maxWidth: 1100, maxHeight: 600, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
+            fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }
           }
