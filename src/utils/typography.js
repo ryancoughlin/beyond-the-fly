@@ -4,10 +4,10 @@ import {Colors} from '../styles/theme';
 
 const typography = new Typography({
   title: 'Beyond the Fly',
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.45,
   headerFontFamily: [
-    'Chivo',
+    'frank-new',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
@@ -17,7 +17,7 @@ const typography = new Typography({
     'sans-serif',
   ],
   bodyFontFamily: [
-    'Chivo',
+    'frank-new',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
@@ -27,15 +27,7 @@ const typography = new Typography({
     'sans-serif',
   ],
   scaleRatio: 2.4,
-  headerWeight: 900,
-  googleFonts: [
-    {
-      name: 'Chivo',
-      styles: [
-        '400','900'
-      ],
-    },
-  ],
+  headerWeight: 600,
   overrideStyles: () => ({
     h1: {
       color: Colors.Global.Text,

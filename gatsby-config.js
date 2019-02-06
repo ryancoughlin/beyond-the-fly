@@ -26,6 +26,14 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'egv8gup'
+        }
+      }
+    },
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
