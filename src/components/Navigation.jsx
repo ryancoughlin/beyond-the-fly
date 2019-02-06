@@ -43,7 +43,7 @@ export default ({data}) =>
       <Spread>
         <Link to="/">Home</Link>
         <Link to="/"><Img fixed={data.file.childImageSharp.fixed} /></Link>
-        <Link to="/">About</Link>
+        <Link to="/about">About</Link>
       </Spread>
     </Container>
     )}

@@ -33,9 +33,21 @@ const IssueNumber = styled.span({
   fontWeight: 700,
 })
 
+const CreditContainer = styled.div({
+  marginBottom: 48,
+  marginTop: 48,
+})
+
+const Credits = styled.div({
+  textAlign: 'center',
+  color: Colors.Palette.Cement,
+  fontWeight: 500,
+  fontSize: 14,
+})
+
 const Title = styled.h1({
   textAlign: 'center',
-  marginBottom: 0
+  marginBottom: 0,
 })
 
 export default ({ data }) => (
@@ -47,7 +59,17 @@ export default ({ data }) => (
         {data.datoCmsStory.timeOfYear}
       </Metadata> 
       <Title>{data.datoCmsStory.title}</Title>
-      <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
+      <CreditContainer>
+        {data.datoCmsStory.storyAuthor &&
+          <Credits>Text by {data.datoCmsStory.storyAuthor}</Credits>
+        }
+        {data.datoCmsStory.photographyBy &&
+          <Credits>Images by {data.datoCmsStory.photographyBy}</Credits>
+        }
+      </CreditContainer>
+      {data.datoCmsStory.introduction &&
+        <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
+      }
     </Hero>
 
     <ModularContent data={data.datoCmsStory.content} />
@@ -61,6 +83,9 @@ export const query = graphql`
       issueNumber
       timeOfYear
       introduction
+      storyAuthor
+      photographyBy
+  
       content {
         ... on DatoCmsText {
           model {
