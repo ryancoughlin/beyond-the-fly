@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from "gatsby"
 import Navigation from '../components/Navigation'
 import {Colors} from '../styles/theme'
 import {Global, css} from '@emotion/core'
-import styled from '@emotion/styled'
 import "../../node_modules/slick-carousel/slick/slick.css"
 import "../../node_modules/slick-carousel/slick/slick-theme.css"
 

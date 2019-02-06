@@ -10,10 +10,6 @@ const Container = styled.div`
 
 const BodyText = ({ input }) => (
   <Container>
-    { 
-      input.header &&
-        <h3>{input.header}</h3>
-    }
     <div dangerouslySetInnerHTML={{ __html: input.bodyNode.childMarkdownRemark.html }} />
   </Container>
 ) 
@@ -22,4 +18,4 @@ export default BodyText;
 
 BodyText.propTypes = {
   input: PropTypes.object.isRequired,
-};
+}

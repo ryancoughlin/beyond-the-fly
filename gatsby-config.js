@@ -34,14 +34,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: [
-          'chivo\:400,700,900'
-        ]
-      }
-    },
-    {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
@@ -58,8 +50,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: '29bd5f384defb9b5e0088af82b037b',
-        previewMode: true,
+        apiToken: '0f3bc38e02e6215e8adbbef7310383',
+        previewMode: true, 
         disableLiveReload: false,
       },
     },

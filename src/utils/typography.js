@@ -26,15 +26,19 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  scaleRatio: 2.4,
+  scaleRatio: 2.8,
   headerWeight: 600,
   overrideStyles: () => ({
     h1: {
-      color: Colors.Global.Text,
-      textTransform: 'uppercase',
+      color: Colors.Global.Highlight,
     },
     h3: {
       color: Colors.Global.Highlight,
+      fontWeight: 500,
+    },
+    h4: {
+      color: Colors.Global.Highlight,
+      fontSize: '1.3rem',
       fontWeight: 500,
     },
     h6: {

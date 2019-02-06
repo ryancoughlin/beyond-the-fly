@@ -5,8 +5,9 @@ import {Colors} from '../styles/theme'
 
 const BlockQuote = styled.blockquote({
   backgroundColor: Colors.Global.Highlight,
-  fontSize: 80,
+  fontSize: 64,
   fontWeight: 600,
+  textTransform: 'uppercase',
   color: Colors.Global.Background
 });
 

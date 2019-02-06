@@ -9,7 +9,7 @@ const Hero = styled.div({
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'column',
-  maxWidth: 760,
+  maxWidth: 740,
   margin: '0 auto'
 })
 
@@ -36,7 +36,7 @@ const IssueNumber = styled.span({
 })
 
 const CreditContainer = styled.div({
-  marginBottom: 16,
+  marginBottom: 80,
   marginTop: 24,
 })
 
@@ -48,6 +48,8 @@ const Credits = styled.div({
 })
 
 const Title = styled.h1({
+  color: Colors.Global.Text,
+  textTransform: 'uppercase',
   textAlign: 'center',
   marginBottom: 0,
 })

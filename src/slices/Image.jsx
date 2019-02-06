@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
+import {Colors} from '../styles/theme';
+
+const Caption = styled.div({
+  color: Colors.Palette.Cement,
+  marginTop: 4,
+})
 
 const ImageContainer = styled.div`
   padding-top: 1.5rem;
@@ -14,6 +20,10 @@ const ImageContainer = styled.div`
 const Image = ({ input }) => (
   <ImageContainer>
     <Img fluid={input.image.fluid} />
+    {input.caption &&
+      <Caption>{input.caption}</Caption>
+    }
+
   </ImageContainer>
 );
 
