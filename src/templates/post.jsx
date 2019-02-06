@@ -21,6 +21,7 @@ const Introduction = styled.div({
 
 const Metadata = styled.h6({
   margin: '0 24',
+  fontSize: 12,
 })
 
 const Dot = styled.span({
@@ -31,16 +32,17 @@ const Dot = styled.span({
 const IssueNumber = styled.span({
   color: Colors.Global.Primary,
   fontWeight: 700,
+  
 })
 
 const CreditContainer = styled.div({
-  marginBottom: 48,
-  marginTop: 48,
+  marginBottom: 16,
+  marginTop: 24,
 })
 
 const Credits = styled.div({
   textAlign: 'center',
-  color: Colors.Palette.Cement,
+  color: Colors.Palette.Text,
   fontWeight: 500,
   fontSize: 14,
 })
