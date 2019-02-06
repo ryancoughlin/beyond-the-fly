@@ -1,13 +1,13 @@
 import Typography from 'typography';
-import theme from '../styles/theme';
+import {Colors} from '../styles/theme';
 
 
 const typography = new Typography({
   title: 'Beyond the Fly',
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.45,
   headerFontFamily: [
-    'Chivo',
+    'frank-new',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
@@ -17,7 +17,7 @@ const typography = new Typography({
     'sans-serif',
   ],
   bodyFontFamily: [
-    'Chivo',
+    'frank-new',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
@@ -26,23 +26,20 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  scaleRatio: 2.4,
-  headerWeight: 900,
-  googleFonts: [
-    {
-      name: 'Chivo',
-      styles: [
-        '400','900'
-      ],
-    },
-  ],
+  scaleRatio: 2.8,
+  headerWeight: 600,
   overrideStyles: () => ({
     h1: {
-      color: theme.colors.textColor,
-      textTransform: 'uppercase',
+      color: Colors.Global.Highlight,
     },
     h3: {
-      color: theme.colors.highlightColor,
+      color: Colors.Global.Highlight,
+      fontWeight: 500,
+    },
+    h4: {
+      color: Colors.Global.Highlight,
+      fontSize: '1.3rem',
+      fontWeight: 500,
     },
     h6: {
       textTransform: 'uppercase',

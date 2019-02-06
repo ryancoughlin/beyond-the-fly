@@ -1,14 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import styled from '@emotion/styled';
+
+const Container = styled.div({
+  maxWidth: 700,
+  margin: '0 auto',
+})
 
 const About = ({ data: { about } }) => (
   <Layout>
-    <div
-      dangerouslySetInnerHTML={{
-        __html: about.aboutUsNode.childMarkdownRemark.html
-      }}
-    ></div>
+    <Container
+    dangerouslySetInnerHTML={{
+      __html: about.aboutUsNode.childMarkdownRemark.html
+    }}/>
+
   </Layout>
 )
 

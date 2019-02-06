@@ -1,14 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
+import {Colors} from '../styles/theme'
 
-const BlockQuote = styled.blockquote`
-  max-width: ${props => props.theme.maxWidthText};
-`;
+const BlockQuote = styled.blockquote({
+  backgroundColor: Colors.Global.Highlight,
+  fontSize: 64,
+  fontWeight: 600,
+  textTransform: 'uppercase',
+  color: Colors.Global.Background
+});
 
+const Inner = styled.div({
+  maxWidth: 800,
+  textAlign: 'center',
+  margin: '0 auto'
+})
 const Quote = ({ input }) => (
   <BlockQuote>
-    <div dangerouslySetInnerHTML={{ __html: input.primary.quote.html }} />
+    <Inner>
+      {input.quote}
+    </Inner>
   </BlockQuote>
 );
 

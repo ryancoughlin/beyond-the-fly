@@ -1,20 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled/macro';
+import styled from '@emotion/styled';
 import Img from 'gatsby-image';
+import {Colors} from '../styles/theme';
+
+const Caption = styled.div({
+  color: Colors.Palette.Cement,
+  marginTop: 4,
+})
 
 const ImageContainer = styled.div`
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  width: 84%;
+  width: 94%;
   margin-left: auto;
   margin-right: auto;
 `;
 
 const Image = ({ input }) => (
   <ImageContainer>
-		{console.log('TCL: input', input)}
     <Img fluid={input.image.fluid} />
+    {input.caption &&
+      <Caption>{input.caption}</Caption>
+    }
+
   </ImageContainer>
 );
 

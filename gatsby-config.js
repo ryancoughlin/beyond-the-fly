@@ -2,9 +2,6 @@ require('dotenv').config({
   path: '.env.${process.env.NODE_ENV}',
 });
 
-const { RichText } = require('prismic-reactjs');
-const { Elements } = RichText;
-
 const {
   _pathPrefix,
   shortName,
@@ -29,11 +26,11 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
     {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          'chivo\:400,700,900'
-        ]
+        typekit: {
+          id: 'egv8gup'
+        }
       }
     },
     {
@@ -53,8 +50,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: '29bd5f384defb9b5e0088af82b037b',
-        previewMode: true,
+        apiToken: '0f3bc38e02e6215e8adbbef7310383',
+        previewMode: true, 
         disableLiveReload: false,
       },
     },

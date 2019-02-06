@@ -1,24 +1,27 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby'
-import theme from '../styles/theme';
+import {Colors} from '../styles/theme';
 import Layout from '../components/Layout'
 import ModularContent from '../components/ModularContent'
 
 const Hero = styled.div({
   display: 'flex',
   alignItems: 'center',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  maxWidth: 740,
+  margin: '0 auto'
 })
 
 const Introduction = styled.div({
   maxWidth: 700,
   textAlign: 'center',
-  margin: '0 auto',
+  margin: '48px auto 48px auto',
 })
 
 const Metadata = styled.h6({
   margin: '0 24',
+  fontSize: 12,
 })
 
 const Dot = styled.span({
@@ -27,20 +30,50 @@ const Dot = styled.span({
 })
 
 const IssueNumber = styled.span({
-  color: theme.colors.primary,
+  color: Colors.Global.Primary,
   fontWeight: 700,
+  
+})
+
+const CreditContainer = styled.div({
+  marginBottom: 80,
+  marginTop: 24,
+})
+
+const Credits = styled.div({
+  textAlign: 'center',
+  color: Colors.Palette.Text,
+  fontWeight: 500,
+  fontSize: 14,
+})
+
+const Title = styled.h1({
+  color: Colors.Global.Text,
+  textTransform: 'uppercase',
+  textAlign: 'center',
+  marginBottom: 0,
 })
 
 export default ({ data }) => (
   <Layout>
     <Hero>
       <Metadata>
-        <IssueNumber>{data.datoCmsStory.issueNumber}</IssueNumber>
+        <IssueNumber> Issue {data.datoCmsStory.issueNumber}</IssueNumber>
         <Dot>·</Dot>
         {data.datoCmsStory.timeOfYear}
       </Metadata> 
-      <h1 className="sheet__title">{data.datoCmsStory.title}</h1>
-      <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
+      <Title>{data.datoCmsStory.title}</Title>
+      <CreditContainer>
+        {data.datoCmsStory.storyAuthor &&
+          <Credits>Text by {data.datoCmsStory.storyAuthor}</Credits>
+        }
+        {data.datoCmsStory.photographyBy &&
+          <Credits>Images by {data.datoCmsStory.photographyBy}</Credits>
+        }
+      </CreditContainer>
+      {data.datoCmsStory.introduction &&
+        <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
+      }
     </Hero>
 
     <ModularContent data={data.datoCmsStory.content} />
@@ -54,20 +87,27 @@ export const query = graphql`
       issueNumber
       timeOfYear
       introduction
+      storyAuthor
+      photographyBy
+  
       content {
         ... on DatoCmsText {
           model {
             apiKey
           }
           header
-          body
+          bodyNode {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
         ... on DatoCmsImage {
           model {
             apiKey
           }
           image {
-            fluid(maxWidth: 1200, imgixParams: { fm: "jpg", auto: "compress" }) {
+            fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -78,9 +118,16 @@ export const query = graphql`
             apiKey
           }
           gallery {
-            fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+            fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }
+          }
+        }
+        ... on DatoCmsQuote {
+          quote
+          who
+          model {
+            apiKey
           }
         }
       }
