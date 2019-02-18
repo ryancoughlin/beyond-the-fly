@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyText, Image, Quote, PhotoGallery } from '../slices';
+import { BodyText, Image, Quote, PhotoGallery, PhotoGrid } from '../slices';
 
 export default class ModularContent extends Component {
   render() {
@@ -16,6 +16,8 @@ export default class ModularContent extends Component {
           return <Quote key={index} input={s} />;
         case 'gallery':
           return <PhotoGallery key={index} input={s} />;
+          case 'photo_grid':
+          return <PhotoGrid key={index} input={s} />;
         default:
           return null;
       }

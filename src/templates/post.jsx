@@ -58,44 +58,45 @@ export default ({ data }) => (
   <Layout>
     <Hero>
       <Metadata>
-        <IssueNumber> Issue {data.datoCmsStory.issueNumber}</IssueNumber>
-        <Dot>·</Dot>
-        {data.datoCmsStory.timeOfYear}
-      </Metadata> 
-      <Title>{data.datoCmsStory.title}</Title>
-      <CreditContainer>
-        {data.datoCmsStory.storyAuthor &&
-          <Credits>Text by {data.datoCmsStory.storyAuthor}</Credits>
+        {data.datoCmsPost.issueNumber &&
+          <IssueNumber> Issue {data.datoCmsPost.issueNumber}</IssueNumber>
         }
-        {data.datoCmsStory.photographyBy &&
-          <Credits>Images by {data.datoCmsStory.photographyBy}</Credits>
+        <Dot>·</Dot>
+        {data.datoCmsPost.timeOfYear}
+      </Metadata> 
+      <Title>{data.datoCmsPost.title}</Title>
+      <CreditContainer>
+        {data.datoCmsPost.author &&
+          <Credits>Text by {data.datoCmsPost.author}</Credits>
+        }
+        {data.datoCmsPost.photographer &&
+          <Credits>Images by {data.datoCmsPost.photographer}</Credits>
         }
       </CreditContainer>
-      {data.datoCmsStory.introduction &&
-        <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
+      {data.datoCmsPost.introduction &&
+        <Introduction><p>{data.datoCmsPost.introduction}</p></Introduction>
       }
     </Hero>
 
-    <ModularContent data={data.datoCmsStory.content} />
+    <ModularContent data={data.datoCmsPost.content} />
   </Layout>
 )
 
 export const query = graphql`
-  query StoryQuery($slug: String!) {
-    datoCmsStory(slug: { eq: $slug }) {
+  query PostQuery($slug: String!) {
+    datoCmsPost(slug: { eq: $slug }) {
       title
       issueNumber
       timeOfYear
       introduction
-      storyAuthor
-      photographyBy
+      author
+      photographer
   
       content {
         ... on DatoCmsText {
           model {
             apiKey
           }
-          header
           bodyNode {
             childMarkdownRemark {
               html
@@ -118,6 +119,16 @@ export const query = graphql`
             apiKey
           }
           gallery {
+            fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
+        ... on DatoCmsPhotoGrid {
+          model {
+            apiKey
+          }
+          images {
             fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }

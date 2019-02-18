@@ -50,9 +50,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: '0f3bc38e02e6215e8adbbef7310383',
-        previewMode: true, 
-        disableLiveReload: false,
+        apiToken: '3f3eb4f7cb0a52c61c1a797e17b058',
+        previewMode: true,
+        disableLiveReload: true,
       },
     },
     'gatsby-plugin-lodash',
