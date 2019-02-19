@@ -27,11 +27,25 @@ export default class PhotoGallery extends React.Component {
       <Container>
          <Global
         styles={css`
+        .slick-next {
+          right: 0;
+        }
+
+        .slick-prev {
+          left: 0;
+        }
+
         .slick-prev,
         .slick-next {
           background-color: ${Colors.Global.Background};
-          width: 60px;
-          height: 60px;
+          width: 40px;
+          height: 40px;
+          z-index: 10;
+        }
+
+        .slick-prev:hover,
+        .slick-next:hover {
+          background-color: ${Colors.Global.Background};
         }
 
         .slick-prev:before,
@@ -42,8 +56,14 @@ export default class PhotoGallery extends React.Component {
         
         .slick-next:before {
           color: ${Colors.Global.Highlight};
-          content: "⟶";
+          content: "→";
         }
+
+        .slick-prev:before {
+          color: ${Colors.Global.Highlight};
+          content: "←";
+        }
+
 
         .slick-dots li:before {
           display: none;
