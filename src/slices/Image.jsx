@@ -7,6 +7,7 @@ import {Colors} from '../styles/theme';
 const Caption = styled.div({
   color: Colors.Palette.Cement,
   marginTop: 4,
+  fontSize: 11,
 })
 
 const ImageContainer = styled.div`
