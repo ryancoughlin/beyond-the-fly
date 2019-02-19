@@ -6,6 +6,8 @@ import {Global, css} from '@emotion/core';
 const Container = styled.div`
   max-width: 600px;
   margin: 56px auto;
+  padding-left: 16px;
+  padding-right: 16px;
 `;
 
 const BodyText = ({ input }) => (

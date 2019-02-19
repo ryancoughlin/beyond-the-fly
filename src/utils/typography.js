@@ -1,7 +1,6 @@
 import Typography from 'typography';
 import {Colors} from '../styles/theme';
 
-
 const typography = new Typography({
   title: 'Beyond the Fly',
   baseFontSize: '16px',
