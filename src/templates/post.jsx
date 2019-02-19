@@ -57,41 +57,39 @@ const Title = styled.h1({
 export default ({ data }) => (
   <Layout>
     <Hero>
-      <Metadata>
-        {data.datoCmsPost.issueNumber &&
-          <IssueNumber> Issue {data.datoCmsPost.issueNumber}</IssueNumber>
+    <Metadata>
+        {data.datoCmsStory.issueNumber &&
+          <IssueNumber> Issue {data.datoCmsStory.issueNumber}</IssueNumber>
         }
         <Dot>·</Dot>
-        {data.datoCmsPost.timeOfYear}
+        {data.datoCmsStory.timeOfYear}
       </Metadata> 
-      <Title>{data.datoCmsPost.title}</Title>
+      <Title>{data.datoCmsStory.title}</Title>
       <CreditContainer>
-        {data.datoCmsPost.author &&
-          <Credits>Text by {data.datoCmsPost.author}</Credits>
+        {data.datoCmsStory.author &&
+          <Credits>Text by {data.datoCmsStory.author}</Credits>
         }
-        {data.datoCmsPost.photographer &&
-          <Credits>Images by {data.datoCmsPost.photographer}</Credits>
+        {data.datoCmsStory.photographer &&
+          <Credits>Images by {data.datoCmsStory.photographer}</Credits>
         }
       </CreditContainer>
-      {data.datoCmsPost.introduction &&
-        <Introduction><p>{data.datoCmsPost.introduction}</p></Introduction>
+      {data.datoCmsStory.introduction &&
+        <Introduction><p>{data.datoCmsStory.introduction}</p></Introduction>
       }
     </Hero>
 
-    <ModularContent data={data.datoCmsPost.content} />
+    <ModularContent data={data.datoCmsStory.content} />
   </Layout>
 )
 
 export const query = graphql`
-  query PostQuery($slug: String!) {
-    datoCmsPost(slug: { eq: $slug }) {
+  query StoryQuery($slug: String!) {
+    datoCmsStory(slug: { eq: $slug }) {
       title
       issueNumber
       timeOfYear
-      introduction
       author
       photographer
-  
       content {
         ... on DatoCmsText {
           model {
@@ -114,11 +112,11 @@ export const query = graphql`
           }
           caption
         }
-        ... on DatoCmsGallery {
+        ... on DatoCmsImageGallery {
           model {
             apiKey
           }
-          gallery {
+          images {
             fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
               ...GatsbyDatoCmsFluid
             }

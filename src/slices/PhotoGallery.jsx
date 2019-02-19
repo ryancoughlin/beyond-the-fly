@@ -62,7 +62,7 @@ export default class PhotoGallery extends React.Component {
       />
         <Slider {...settings}>
         {
-          this.props.input.gallery.map((image, index) => {
+          this.props.input.images.map((image, index) => {
             return <Img key={index} fluid={image.fluid} />
           })
         }
