@@ -4,6 +4,12 @@ import { graphql } from 'gatsby'
 import {Colors} from '../styles/theme';
 import Layout from '../components/Layout'
 import ModularContent from '../components/ModularContent'
+import facepaint from 'facepaint'
+
+const breakpoints = [576, 768, 992]
+const mq = facepaint(
+  breakpoints.map(bp => `@media (min-width: ${bp}px)`)
+)
 
 const Hero = styled.div({
   display: 'flex',
@@ -36,7 +42,7 @@ const IssueNumber = styled.span({
 })
 
 const CreditContainer = styled.div({
-  marginBottom: 80,
+  marginBottom: 40,
   marginTop: 24,
 })
 
@@ -47,11 +53,14 @@ const Credits = styled.div({
   fontSize: 14,
 })
 
-const Title = styled.h1({
+const Title = styled.h1(
+  mq({fontSize: ['1.5rem', '2.8rem']}), {
   color: Colors.Global.Text,
   textTransform: 'uppercase',
   textAlign: 'center',
   marginBottom: 0,
+  paddingLeft: 16,
+  paddingRight: 16,
 })
 
 export default ({ data }) => (

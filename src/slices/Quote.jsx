@@ -2,10 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
 import {Colors} from '../styles/theme'
+import facepaint from 'facepaint'
 
-const BlockQuote = styled.blockquote({
+const breakpoints = [576, 768, 992]
+const mq = facepaint(
+  breakpoints.map(bp => `@media (min-width: ${bp}px)`)
+)
+
+const BlockQuote = styled.blockquote(
+  mq({fontSize: [32, 64]}), {
   backgroundColor: Colors.Global.Highlight,
-  fontSize: 64,
   fontWeight: 600,
   textTransform: 'uppercase',
   color: Colors.Global.Background
