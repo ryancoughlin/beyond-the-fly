@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import {Global, css} from '@emotion/core';
+import hr from '../assets/images/hr.svg';
 
 const Container = styled.div`
   max-width: 600px;
@@ -11,7 +12,18 @@ const Container = styled.div`
 `;
 
 const BodyText = ({ input }) => (
+
   <Container>
+    <Global
+      styles={css`
+        hr {
+          background-image: url(${hr});
+          max-width: 100px;
+          height: 4px;
+          margin: 0 auto;
+       }
+      `}
+    />
     <div dangerouslySetInnerHTML={{ __html: input.bodyNode.childMarkdownRemark.html }} />
   </Container>
 ) 
