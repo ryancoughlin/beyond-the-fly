@@ -13,7 +13,7 @@ const Caption = styled.div({
 const ImageContainer = styled.div`
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  width: 94%;
+  width: 84%;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -24,7 +24,6 @@ const Image = ({ input }) => (
     {input.caption &&
       <Caption>{input.caption}</Caption>
     }
-
   </ImageContainer>
 );
 

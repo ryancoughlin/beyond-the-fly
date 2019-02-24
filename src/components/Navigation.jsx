@@ -8,8 +8,8 @@ import {Colors} from '../styles/theme';
 const Container = styled.div({
   display: 'flex',
   justifyContent: 'center',
-  marginTop: 24,
-  marginBottom: 80,
+  marginTop: 40,
+  marginBottom: 40,
   position: '-webkit-sticky',
   position: 'sticky',
 })
@@ -50,7 +50,9 @@ export default ({data}) =>
     <Container>
       <Spread>
         <Link to="/">Home</Link>
-        <Link to="/"><Img fixed={data.file.childImageSharp.fixed} /></Link>
+        <Link to="/">
+          <Img fadeIn={false} fixed={data.file.childImageSharp.fixed} />
+        </Link>
         <Link to="/about">About</Link>
       </Spread>
     </Container>
