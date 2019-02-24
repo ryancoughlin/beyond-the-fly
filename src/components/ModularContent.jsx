@@ -7,9 +7,6 @@ export default class ModularContent extends Component {
     const { data } = this.props;
     if (data != null) {
       const content = data.map((s, index) => {
-        console.log('TCL: ModularContent -> render -> s.model.apiKey', s.model.apiKey)
-        console.log(data)
-        
         switch (s.model.apiKey) {
           case 'text':
             return <BodyText key={index} input={s} />;
