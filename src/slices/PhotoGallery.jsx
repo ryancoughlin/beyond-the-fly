@@ -3,23 +3,13 @@ import Slider from "react-slick";
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import {Global, css} from '@emotion/core'
-import {Colors} from '../styles/theme'
-
-const Container = styled.div({
-  paddingTop: '1.5rem',
-  paddingBottom: '1.5rem',
-  width: '94%',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-})
-
+import {Colors, Container} from '../styles/theme'
 export default class PhotoGallery extends React.Component {
   render() {
     var settings = {
       dots: true,
-      infinite: true,
-      speed: 275,
-      slidesToShow: 1,
+      speed: 175,
+      slidesToShow: 2,
       slidesToScroll: 1
     };
 

@@ -2,19 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
-import {Colors} from '../styles/theme';
+import {Colors, Container} from '../styles/theme';
 import facepaint from 'facepaint'
 
 const breakpoints = [576, 768, 992]
 const mq = facepaint(
   breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 )
-
-const Container = styled.div({
-  maxWidth: 1000,
-  margin: '0 auto',
-  position: 'relative'
-})
 
 const Metadata = styled.h6({
   margin: '0 24',
@@ -45,25 +39,31 @@ const Title = styled.h1(
 })
 
 const Contents = styled.div({
-  position: 'relative',
+  position: 'absolute',
   backgroundColor: Colors.Global.Background,
   maxWidth: 620,
   paddingTop: 32,
   paddingBottom: 32,
   paddingRight: 24,
-  bottom: 110
+  bottom: '-40px',
+})
+
+const HeroContainer = styled(Container)({
+  marginBottom: 100,
 })
 
 const Hero = ({ data }) => (
-  <Container>
-    <Img fluid={data.featuredImage.fluid} />
+  <HeroContainer>
+    {data.featuredImage.fluid &&
+      <Img fluid={data.featuredImage.fluid} />
+    }
     <Contents>
       <Title>{data.title}</Title>
       {data.credits &&
         <Credits>{data.credits}</Credits>
       }
     </Contents>
-  </Container>
+  </HeroContainer>
 );
 
 export default Hero;
