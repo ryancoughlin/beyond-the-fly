@@ -8,8 +8,10 @@ import ModularContent from '../components/ModularContent'
 
 export default ({ data }) => (
   <Layout>
-    <Hero data={data.datoCmsStory} />
-    <ModularContent data={data.datoCmsStory.content} />
+    <>
+      <Hero data={data.datoCmsStory} />
+      <ModularContent data={data.datoCmsStory.content} />
+    </>
   </Layout>
 )
 
@@ -22,7 +24,7 @@ export const query = graphql`
       credits
       featuredImage {
         fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "900", fit: "crop" }) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsSizes
         }
       }
       content {
@@ -41,8 +43,8 @@ export const query = graphql`
             apiKey
           }
           image {
-            fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
-              ...GatsbyDatoCmsFluid
+            fluid(maxWidth: 1100, maxHeight: 700, imgixParams: { fm: "jpg", auto: "compress", h: "780", fit: "crop" }) {
+              ...GatsbyDatoCmsSizes
             }
           }
           caption
@@ -53,7 +55,7 @@ export const query = graphql`
           }
           images {
             fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsSizes
             }
           }
         }
@@ -63,7 +65,7 @@ export const query = graphql`
           }
           images {
             fluid(maxWidth: 1100, maxHeight: 550, imgixParams: { fm: "jpg", auto: "compress", h: "700", fit: "crop" }) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsSizes
             }
           }
         }

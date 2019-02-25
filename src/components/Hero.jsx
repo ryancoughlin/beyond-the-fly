@@ -32,8 +32,7 @@ const Credits = styled.div({
   fontSize: 14,
 })
 
-const Title = styled.h1(
-  mq({fontSize: ['1.5rem', '2.4rem']}), {
+const Title = styled.h1({
   color: Colors.Global.Highlight,
   textTransform: 'uppercase',
 })
@@ -41,20 +40,21 @@ const Title = styled.h1(
 const Contents = styled.div({
   position: 'absolute',
   backgroundColor: Colors.Global.Background,
-  maxWidth: 620,
+  maxWidth: 520,
   paddingTop: 32,
   paddingBottom: 32,
   paddingRight: 24,
-  bottom: '-40px',
+  bottom: '-140px',
 })
 
 const HeroContainer = styled(Container)({
-  marginBottom: 100,
+  marginBottom: 200,
 })
 
 const Hero = ({ data }) => (
   <HeroContainer>
-    {data.featuredImage.fluid &&
+    {console.log(data)}
+    {data.featuredImage &&
       <Img fluid={data.featuredImage.fluid} />
     }
     <Contents>

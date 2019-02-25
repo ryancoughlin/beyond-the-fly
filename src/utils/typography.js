@@ -25,7 +25,7 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  scaleRatio: 2.8,
+  scaleRatio: 3.0,
   headerWeight: 600,
   overrideStyles: () => ({
     h1: {
@@ -37,7 +37,6 @@ const typography = new Typography({
     },
     h4: {
       color: Colors.Global.Highlight,
-      fontSize: '1.3rem',
       fontWeight: 500,
     },
     h6: {

@@ -39,7 +39,7 @@ export default ({data}) =>
       query LogoQuery {
         file(relativePath: { eq: "logo-colored.png" }) {
           childImageSharp { 
-            fixed(height: 26) {
+            fixed(height: 30) {
               ...GatsbyImageSharpFixed
             }
           }
