@@ -53,7 +53,6 @@ const HeroContainer = styled(Container)({
 
 const Hero = ({ data }) => (
   <HeroContainer>
-    {console.log(data)}
     {data.featuredImage &&
       <Img fluid={data.featuredImage.fluid} />
     }
