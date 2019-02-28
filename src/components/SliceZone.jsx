@@ -39,8 +39,6 @@ export default class SliceZone extends Component {
           return <Image key={s.id} input={s} />;
         case 'quote':
           return <Quote key={s.id} input={s} />;
-        case 'video':
-          return <Video key={s.id} input={s} />;
         case 'image_gallery':
           return <PhotoGallery key={s.id} input={s} />;
         default:
