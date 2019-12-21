@@ -2,71 +2,47 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
-import {Colors, Container} from '../styles/theme';
-import facepaint from 'facepaint'
-
-const breakpoints = [576, 768, 992]
-const mq = facepaint(
-  breakpoints.map(bp => `@media (min-width: ${bp}px)`)
-)
+import { Colors, Container } from '../styles/theme';
+import { Box } from 'rebass';
+import { Styled } from 'theme-ui';
 
 const Metadata = styled.h6({
   margin: '0 24',
-  fontSize: 12,
-})
+  fontSize: 12
+});
 
 const Dot = styled.span({
   marginLeft: 8,
-  marginRight: 8,
-})
+  marginRight: 8
+});
 
 const IssueNumber = styled.span({
   color: Colors.Global.Primary,
-  fontWeight: 700,
-  
-})
+  fontWeight: 700
+});
 
 const Credits = styled.div({
   color: Colors.Palette.Text,
   fontWeight: 400,
-  fontSize: 14,
-})
-
-const Title = styled.h1({
-  color: Colors.Global.Highlight,
-  textTransform: 'uppercase',
-})
-
-const Contents = styled.div({
-  position: 'absolute',
-  backgroundColor: Colors.Global.Background,
-  maxWidth: 520,
-  paddingTop: 32,
-  paddingBottom: 32,
-  paddingRight: 24,
-  bottom: '-140px',
-})
-
-const HeroContainer = styled(Container)({
-  marginBottom: 200,
-})
+  fontSize: 14
+});
 
 const Hero = ({ data }) => (
-  <HeroContainer>
-    {data.featuredImage &&
-      <Img fluid={data.featuredImage.fluid} />
-    }
-    <Contents>
-      <Title>{data.title}</Title>
-      {data.credits &&
-        <Credits>{data.credits}</Credits>
-      }
-    </Contents>
-  </HeroContainer>
+  <Box
+    sx={{
+      maxWidth: 1100,
+      mx: 'auto',
+      px: 3
+    }}
+  >
+    <Styled.h1>{data.title}</Styled.h1>
+    {data.featuredImage && <Img fluid={data.featuredImage.fluid} />}
+    {data.credits && <Credits>{data.credits}</Credits>}
+  </Box>
 );
 
 export default Hero;
 
 Hero.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };

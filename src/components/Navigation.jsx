@@ -1,9 +1,10 @@
 import React from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
-import Img from 'gatsby-image'
-import {Link} from 'gatsby'
-import {Colors} from '../styles/theme';
+import Img from 'gatsby-image';
+import { Link } from 'gatsby';
+import { Box } from 'rebass';
+import { Colors } from '../styles/theme';
 
 const Container = styled.div({
   display: 'flex',
@@ -11,8 +12,8 @@ const Container = styled.div({
   marginTop: 40,
   marginBottom: 40,
   position: '-webkit-sticky',
-  position: 'sticky',
-})
+  position: 'sticky'
+});
 
 const Spread = styled.div({
   justifyContent: 'space-between',
@@ -20,26 +21,24 @@ const Spread = styled.div({
   maxWidth: 360,
   alignItems: 'center',
   flex: 1,
-  'a' : {
+  a: {
     color: 'white',
     fontSize: 12,
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
-  'a:hover' : {
+  'a:hover': {
     color: Colors.Palette.Cement,
-    textDecoration: 'underline',
-
+    textDecoration: 'underline'
   }
-})
+});
 
-export default ({data}) =>
- (
+export default ({ data }) => (
   <StaticQuery
     query={graphql`
       query LogoQuery {
-        file(relativePath: { eq: "logo-colored.png" }) {
-          childImageSharp { 
-            fixed(height: 30) {
+        file(relativePath: { eq: "logotype.png" }) {
+          childImageSharp {
+            fixed(height: 14) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -47,15 +46,18 @@ export default ({data}) =>
       }
     `}
     render={data => (
-    <Container>
-      <Spread>
-        <Link to="/">Home</Link>
+      <Box
+        sx={{
+          maxWidth: 1100,
+          mx: 'auto',
+          px: 3
+        }}
+      >
         <Link to="/">
           <Img fadeIn={false} fixed={data.file.childImageSharp.fixed} />
         </Link>
         <Link to="/about">About</Link>
-      </Spread>
-    </Container>
+      </Box>
     )}
   />
-)
+);

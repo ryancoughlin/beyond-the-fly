@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: '.env.${process.env.NODE_ENV}',
+  path: '.env.${process.env.NODE_ENV}'
 });
 
 const {
@@ -15,17 +15,24 @@ const {
   logo,
   favicon,
   siteLanguage,
-  twitter,
+  twitter
 } = require('./src/utils/website');
 
 module.exports = {
   plugins: [
-    ['gatsby-plugin-theme-ui',
+    'gatsby-plugin-theme-ui',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        families: ['Inter UI'],
+        urls: ['/fonts/fonts.css']
+      }
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -35,17 +42,11 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: '/src/assets/images/'
-        },
+        }
       }
     },
     {
@@ -53,17 +54,17 @@ module.exports = {
       options: {
         apiToken: '3f3eb4f7cb0a52c61c1a797e17b058',
         previewMode: true || false,
-        disableLiveReload: false,
-      },
+        disableLiveReload: false
+      }
     },
     'gatsby-plugin-lodash',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets/images/`,
-      },
+        path: `${__dirname}/src/assets/images/`
+      }
     },
-    'gatsby-plugin-netlify',
-  ],
+    'gatsby-plugin-netlify'
+  ]
 };

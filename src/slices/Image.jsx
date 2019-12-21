@@ -1,29 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
 import Img from 'gatsby-image';
-import {Colors, Container} from '../styles/theme';
-
-const Caption = styled.div({
-  color: Colors.Palette.Cement,
-  marginTop: 4,
-  fontSize: 13,
-})
+import { Box } from 'rebass';
+import { Styled } from 'theme-ui';
 
 const Image = ({ input }) => (
-  <Container>
-    {input.image.fluid &&
-      <Img fluid={input.image.fluid} />
-    }
-
-    {input.caption &&
-      <Caption>{input.caption}</Caption>
-    }
-  </Container>
-)
+  <Box
+    sx={{
+      maxWidth: 1100,
+      mx: 'auto',
+      px: 3
+    }}
+  >
+    {input.image.fluid && <Img fluid={input.image.fluid} />}
+    {input.caption && <Styled.p>{input.caption}</Styled.p>}
+  </Box>
+);
 
 export default Image;
 
 Image.propTypes = {
-  input: PropTypes.object.isRequired,
+  input: PropTypes.object.isRequired
 };
