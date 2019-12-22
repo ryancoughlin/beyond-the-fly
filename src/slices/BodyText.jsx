@@ -16,9 +16,10 @@ const components = {
 const BodyText = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 1100,
+      maxWidth: 600,
       mx: 'auto',
-      px: 3
+      pt: 4,
+      pb: 4
     }}
   >
     <bodyMarkdown>

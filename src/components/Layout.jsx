@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Navigation from '../components/Navigation';
-import ChangeTheme from '../components/ChangeTheme';
+// import ChangeTheme from '../components/ChangeTheme';
 import { ThemeProvider, Styled } from 'theme-ui';
 import theme from '../theme';
 import '../../node_modules/slick-carousel/slick/slick.css';
@@ -27,7 +27,7 @@ const TemplateWrapper = ({ children }) => (
         render={data => (
           <>
             <Navigation />
-            <ChangeTheme />
+            {/* <ChangeTheme /> */}
             {children}
           </>
         )}
