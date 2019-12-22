@@ -1,6 +1,5 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/Layout';
 import styled from '@emotion/styled';
 
 const Home = ({ data }) => (
@@ -13,9 +12,9 @@ const Home = ({ data }) => (
       </div>
     ))}
   </Layout>
-)
+);
 
-export default Home
+export default Home;
 
 export const query = graphql`
   query IndexQuery {
@@ -29,4 +28,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

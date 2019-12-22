@@ -1,10 +1,9 @@
-import React from 'react'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
-const Video = ({input}) => (
+const Video = ({ input }) => (
   <>
-  <ReactPlayer url={input.primary.video.embed_url} width="100%" />
+    <ReactPlayer url={input.primary.video.embed_url} width="100%" />
   </>
-)
+);
 
-export default Video
+export default Video;

@@ -1,37 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled/macro';
-import {Colors} from '../styles/theme'
-import facepaint from 'facepaint'
+import { Box } from 'rebass';
+import { Styled } from 'theme-ui';
 
-const breakpoints = [576, 768, 992]
-const mq = facepaint(
-  breakpoints.map(bp => `@media (min-width: ${bp}px)`)
-)
-
-const BlockQuote = styled.blockquote(
-  mq({fontSize: [32, 64]}), {
-  backgroundColor: Colors.Global.Highlight,
-  fontWeight: 600,
-  textTransform: 'uppercase',
-  color: Colors.Global.Background
-});
-
-const Inner = styled.div({
-  maxWidth: 800,
-  textAlign: 'center',
-  margin: '0 auto'
-})
 const Quote = ({ input }) => (
-  <BlockQuote>
-    <Inner>
-      {input.quote}
-    </Inner>
-  </BlockQuote>
+  <Box
+    sx={{
+      pt: '4',
+      pb: '4',
+      backgroundColor: 'primary',
+      textAlign: 'center'
+    }}
+  >
+    <Styled.blockquote>{input.quote}</Styled.blockquote>
+  </Box>
 );
 
 export default Quote;
 
 Quote.propTypes = {
-  input: PropTypes.object.isRequired,
+  input: PropTypes.object.isRequired
 };

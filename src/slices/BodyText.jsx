@@ -1,41 +1,34 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import {Global, css} from '@emotion/core';
-import hr from '../assets/images/hr.svg';
-import {Colors} from '../styles/theme';
+import { Box } from 'rebass';
+import { MDXProvider } from '@mdx-js/react';
+import { Styled } from 'theme-ui';
+import bodyMarkdown from '../utils/body-markdown';
 
-const Container = styled.div`
-  max-width: 600px;
-  margin: 56px auto;
-  padding-left: 16px;
-  padding-right: 16px;
-`
+const components = {
+  h1: Styled.h1,
+  h2: Styled.h2,
+  h3: Styled.h3,
+  h4: Styled.h4,
+  p: Styled.p,
+  code: Styled.pre
+};
 
 const BodyText = ({ input }) => (
-  <Container>
-    <Global
-      styles={css`
-        hr {
-          background-image: url(${hr});
-          max-width: 100px;
-          height: 4px;
-          margin: 0 auto;
-       }
-       blockquote {
-        font-family: ff-market-web, sans-serif;
-        text-align: center;
-        font-size: 46px;
-        color: ${Colors.Global.Highlight};
-       }
-      `}
-    />
-    <div dangerouslySetInnerHTML={{ __html: input.bodyNode.childMarkdownRemark.html }} />
-  </Container>
-) 
+  <Box
+    sx={{
+      maxWidth: 1100,
+      mx: 'auto',
+      px: 3
+    }}
+  >
+    <bodyMarkdown>
+      {input.bodyNode.childMarkdownRemark.rawMarkdownBody}
+    </bodyMarkdown>
+  </Box>
+);
 
 export default BodyText;
 
 BodyText.propTypes = {
-  input: PropTypes.object.isRequired,
-}
+  input: PropTypes.object.isRequired
+};

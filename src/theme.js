@@ -87,6 +87,10 @@ export default {
         color: 'inherit'
       }
     },
+    blockquote: {
+      fontSize: 6,
+      fontWeight: 'bold'
+    },
     code: {
       fontFamily: 'monospace',
       fontSize: 'inherit'

@@ -39,6 +39,32 @@ export const query = graphql`
           bodyNode {
             childMarkdownRemark {
               rawMarkdownBody
+              html
+            }
+          }
+        }
+        ... on DatoCmsVerticalStatement {
+          model {
+            apiKey
+          }
+          bodyNode {
+            childMarkdownRemark {
+              rawMarkdownBody
+              html
+            }
+          }
+          image {
+            fluid(
+              maxWidth: 1100
+              maxHeight: 400
+              imgixParams: {
+                fm: "jpg"
+                auto: "compress"
+                h: "780"
+                fit: "crop"
+              }
+            ) {
+              ...GatsbyDatoCmsSizes
             }
           }
         }

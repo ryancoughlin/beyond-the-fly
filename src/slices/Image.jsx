@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { Box } from 'rebass';
@@ -9,7 +8,8 @@ const Image = ({ input }) => (
     sx={{
       maxWidth: 1100,
       mx: 'auto',
-      px: 3
+      mt: 6,
+      mb: 6
     }}
   >
     {input.image.fluid && <Img fluid={input.image.fluid} />}

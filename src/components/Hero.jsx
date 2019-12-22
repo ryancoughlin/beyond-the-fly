@@ -31,8 +31,7 @@ const Hero = ({ data }) => (
   <Box
     sx={{
       maxWidth: 1100,
-      mx: 'auto',
-      px: 3
+      mx: 'auto'
     }}
   >
     <Styled.h1>{data.title}</Styled.h1>
