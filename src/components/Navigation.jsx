@@ -20,16 +20,22 @@ export default ({ data }) => (
     render={data => (
       <Box
         sx={{
-          maxWidth: 1100,
-          mx: 'auto',
-          mt: 3,
-          mb: 5
+          backgroundColor: 'darkBackground',
+          pt: 5,
+          pb: 5
         }}
       >
-        <Link to="/">
-          <Img fadeIn={false} fixed={data.file.childImageSharp.fixed} />
-        </Link>
-        <Link to="/about">About</Link>
+        <Box
+          sx={{
+            maxWidth: 1100,
+            mx: 'auto'
+          }}
+        >
+          <Link to="/">
+            <Img fadeIn={false} fixed={data.file.childImageSharp.fixed} />
+          </Link>
+          <Link to="/about">About</Link>
+        </Box>
       </Box>
     )}
   />

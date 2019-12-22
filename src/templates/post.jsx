@@ -26,7 +26,7 @@ export const query = graphql`
         fluid(
           maxWidth: 1100
           maxHeight: 300
-          imgixParams: { fm: "jpg", auto: "compress", h: "900", fit: "crop" }
+          imgixParams: { fm: "jpg", auto: "compress", h: "500", fit: "crop" }
         ) {
           ...GatsbyDatoCmsSizes
         }

@@ -23,7 +23,11 @@ const BodyText = ({ input }) => (
         gridArea: 'Content'
       }}
     >
-      {input.bodyNode.childMarkdownRemark.rawMarkdownBody}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: input.bodyNode.childMarkdownRemark.html
+        }}
+      />{' '}
     </Box>
     <Box
       sx={{

@@ -7,6 +7,7 @@ import { ThemeProvider, Styled } from 'theme-ui';
 import theme from '../theme';
 import '../../node_modules/slick-carousel/slick/slick.css';
 import '../../node_modules/slick-carousel/slick/slick-theme.css';
+import '../assets/css/layout.css';
 
 const TemplateWrapper = ({ children }) => (
   <ThemeProvider theme={theme}>

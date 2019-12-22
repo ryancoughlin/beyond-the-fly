@@ -17,19 +17,24 @@ export default {
   },
   colors: {
     text: '#1d2737',
+    white: '#fff',
     background: '#fff',
+    darkBackground: '#212528',
     primary: '#ffc500',
     secondary: '#30c',
     muted: '#868C96'
   },
   styles: {
+    body: {
+      margin: 0
+    },
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body'
     },
     h1: {
-      color: 'text',
+      color: 'white',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
@@ -62,6 +67,8 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
+      textTransform: 'uppercase',
+      marginBottom: 0,
       fontSize: 1
     },
     h6: {
@@ -112,7 +119,7 @@ export default {
       maxWidth: '100%'
     },
     caption: {
-      fontSize: 3,
+      fontSize: 2,
       color: 'muted'
     }
   }

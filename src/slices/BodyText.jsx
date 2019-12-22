@@ -16,15 +16,17 @@ const components = {
 const BodyText = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 600,
+      maxWidth: 700,
       mx: 'auto',
       pt: 4,
       pb: 4
     }}
   >
-    <bodyMarkdown>
-      {input.bodyNode.childMarkdownRemark.rawMarkdownBody}
-    </bodyMarkdown>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: input.bodyNode.childMarkdownRemark.html
+      }}
+    />
   </Box>
 );
 

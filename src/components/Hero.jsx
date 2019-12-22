@@ -30,13 +30,21 @@ const Credits = styled.div({
 const Hero = ({ data }) => (
   <Box
     sx={{
-      maxWidth: 1100,
-      mx: 'auto'
+      backgroundColor: 'darkBackground',
+      pt: 5,
+      pb: 5
     }}
   >
-    <Styled.h1>{data.title}</Styled.h1>
-    {data.featuredImage && <Img fluid={data.featuredImage.fluid} />}
-    {data.credits && <Credits>{data.credits}</Credits>}
+    <Box
+      sx={{
+        mx: 'auto',
+        maxWidth: 1100
+      }}
+    >
+      <Styled.h1>{data.title}</Styled.h1>
+      {data.featuredImage && <Img fluid={data.featuredImage.fluid} />}
+      {data.credits && <Credits>{data.credits}</Credits>}
+    </Box>
   </Box>
 );
 

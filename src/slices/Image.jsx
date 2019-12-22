@@ -6,14 +6,14 @@ import { Styled } from 'theme-ui';
 const Image = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 1100,
+      maxWidth: 1200,
       mx: 'auto',
-      mt: 6,
-      mb: 6
+      mt: 4,
+      mb: 4
     }}
   >
     {input.image.fluid && <Img fluid={input.image.fluid} />}
-    {input.caption && <Styled.p>{input.caption}</Styled.p>}
+    {input.caption && <caption>{input.caption}</caption>}
   </Box>
 );
 
