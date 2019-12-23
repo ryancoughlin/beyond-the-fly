@@ -5,7 +5,7 @@ export default {
     heading: 'benton-sans-compressed',
     monospace: 'Menlo, monospace'
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 44, 52, 64],
+  fontSizes: [9, 12, 14, 16, 20, 24, 32, 44, 52, 64],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -52,7 +52,7 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 4,
+      fontSize: 6,
       textTransform: 'uppercase'
     },
     h3: {
@@ -60,7 +60,7 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 3,
+      fontSize: 5,
       textTransform: 'uppercase'
     },
     h4: {
@@ -68,7 +68,9 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 2
+      textTransform: 'uppercase',
+      marginBottom: 0,
+      fontSize: 4
     },
     h5: {
       color: 'text',
@@ -77,14 +79,17 @@ export default {
       fontWeight: 'heading',
       textTransform: 'uppercase',
       marginBottom: 0,
-      fontSize: 1
+      fontSize: 3
     },
     h6: {
-      color: 'text',
-      fontFamily: 'heading',
+      color: 'muted',
+      fontFamily: 'body',
       lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 0
+      fontWeight: 'body',
+      marginBottom: 0,
+      marginTop: 2,
+      fontSize: 1,
+      textAlign: 'center'
     },
     p: {
       color: 'text',
@@ -104,7 +109,9 @@ export default {
     },
     blockquote: {
       fontSize: 6,
-      fontWeight: 'bold'
+      fontFamily: 'marydale',
+      fontWeight: 'bold',
+      color: 'darkBackground'
     },
     code: {
       fontFamily: 'monospace',

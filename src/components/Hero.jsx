@@ -41,7 +41,15 @@ const Hero = ({ data }) => (
         maxWidth: 1100
       }}
     >
-      <Styled.h1>{data.title}</Styled.h1>
+      <Box
+        sx={{
+          mx: 'auto',
+          maxWidth: 700,
+          textAlign: 'center'
+        }}
+      >
+        <Styled.h1>{data.title}</Styled.h1>
+      </Box>
       {data.featuredImage && <Img fluid={data.featuredImage.fluid} />}
       {data.credits && <Credits>{data.credits}</Credits>}
     </Box>

@@ -9,7 +9,8 @@ const MarkdownTransform = ({ markdown }) => {
       source={markdown}
       renderers={{
         paragraph: props => <Styled.p {...props} />,
-        heading: props => HeadingRenderer(props.level, props)
+        heading: props => HeadingRenderer(props.level, props),
+        blockquote: props => <Styled.blockquote {...props} />
       }}
     />
   );

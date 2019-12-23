@@ -5,10 +5,10 @@ import MarkdownTransform from '../utils/MarkdownTransform';
 const BodyText = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 700,
+      maxWidth: 600,
       mx: 'auto',
-      pt: 4,
-      pb: 4
+      pt: 2,
+      pb: 2
     }}
   >
     <MarkdownTransform

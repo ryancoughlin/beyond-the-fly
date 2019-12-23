@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Box } from 'rebass';
-import { Styled } from 'theme-ui';
+import MarkdownTransform from '../utils/MarkdownTransform';
 import Img from 'gatsby-image';
 
 const BodyText = ({ input }) => (
@@ -23,11 +23,9 @@ const BodyText = ({ input }) => (
         gridArea: 'Content'
       }}
     >
-      <div
-        dangerouslySetInnerHTML={{
-          __html: input.bodyNode.childMarkdownRemark.html
-        }}
-      />{' '}
+      <MarkdownTransform
+        markdown={input.bodyNode.childMarkdownRemark.rawMarkdownBody}
+      />
     </Box>
     <Box
       sx={{

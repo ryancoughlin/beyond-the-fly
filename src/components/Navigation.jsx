@@ -8,7 +8,7 @@ export default ({ data }) => (
   <StaticQuery
     query={graphql`
       query LogoQuery {
-        file(relativePath: { eq: "logotype.png" }) {
+        file(relativePath: { eq: "logotype-yellow.png" }) {
           childImageSharp {
             fixed(height: 14) {
               ...GatsbyImageSharpFixed

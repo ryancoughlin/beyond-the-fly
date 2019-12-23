@@ -5,9 +5,11 @@ import { Styled } from 'theme-ui';
 const Quote = ({ input }) => (
   <Box
     sx={{
-      pt: '4',
-      pb: '4',
+      maxWidth: 960,
       backgroundColor: 'primary',
+      mx: 'auto',
+      pt: 6,
+      pb: 6,
       textAlign: 'center'
     }}
   >
