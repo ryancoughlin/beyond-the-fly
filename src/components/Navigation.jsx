@@ -21,7 +21,7 @@ export default ({ data }) => (
       <Box
         sx={{
           backgroundColor: 'darkBackground',
-          pt: 5,
+          pt: 4,
           pb: 5
         }}
       >

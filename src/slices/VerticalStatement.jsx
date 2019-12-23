@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 const BodyText = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 1100,
+      maxWidth: 800,
       mx: 'auto',
       mt: 6,
       mb: 6,

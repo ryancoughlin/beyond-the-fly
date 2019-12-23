@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
-import { Colors, Container } from '../styles/theme';
+import { Colors } from '../styles/theme';
 import { Box } from 'rebass';
 import { Styled } from 'theme-ui';
 

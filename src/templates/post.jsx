@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import { Colors } from '../styles/theme';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import ModularContent from '../components/ModularContent';

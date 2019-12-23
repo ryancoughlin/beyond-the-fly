@@ -2,10 +2,10 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Inter UI, sans-serif',
-    heading: 'Inter UI, sans-serif',
+    heading: 'benton-sans-compressed',
     monospace: 'Menlo, monospace'
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 82],
+  fontSizes: [12, 14, 16, 20, 24, 32, 44, 52, 64],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -19,15 +19,20 @@ export default {
     text: '#1d2737',
     white: '#fff',
     background: '#fff',
-    darkBackground: '#212528',
+    darkBackground: '#16171b',
     primary: '#ffc500',
     secondary: '#30c',
     muted: '#868C96'
   },
+  text: {
+    test: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 900,
+      color: 'secondary'
+    }
+  },
   styles: {
-    body: {
-      margin: 0
-    },
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
@@ -38,22 +43,25 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      letterSpacing: '-0.055em',
-      fontSize: 8
+      letterSpacing: '0.055em',
+      fontSize: 8,
+      textTransform: 'uppercase'
     },
     h2: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 4
+      fontSize: 4,
+      textTransform: 'uppercase'
     },
     h3: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 3
+      fontSize: 3,
+      textTransform: 'uppercase'
     },
     h4: {
       color: 'text',
