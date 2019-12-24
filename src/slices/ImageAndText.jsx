@@ -17,7 +17,7 @@ const ImageAndText = ({ input }) => (
       gridTemplateColumns: 'repeat(12,1fr)',
       gridTemplateRows: '',
       gridTemplateAreas:
-        '"Content Content Content Image Image Image Image Image Image Image Image Image"'
+        '"Content Content Content Content Image Image Image Image Image Image Image Image"'
     }}
   >
     <Box
