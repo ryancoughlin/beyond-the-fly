@@ -25,11 +25,8 @@ export default {
     muted: '#868C96'
   },
   text: {
-    test: {
-      fontFamily: 'body',
-      lineHeight: 'body',
-      fontWeight: 900,
-      color: 'secondary'
+    light: {
+      color: 'white'
     }
   },
   styles: {

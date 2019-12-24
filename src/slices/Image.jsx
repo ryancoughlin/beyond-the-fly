@@ -6,10 +6,12 @@ import { Styled } from 'theme-ui';
 const Image = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 960,
+      maxWidth: 1000,
       mx: 'auto',
-      mt: 4,
-      mb: 4
+      mt: 2,
+      mb: 2,
+      pr: 1,
+      pl: 1
     }}
   >
     {input.image.fluid && <Img fluid={input.image.fluid} />}

@@ -6,7 +6,8 @@ import {
   Quote,
   PhotoGallery,
   PhotoGrid,
-  VerticalStatement
+  VerticalStatement,
+  ImageAndText
 } from '../slices';
 
 export default class ModularContent extends Component {
@@ -27,6 +28,8 @@ export default class ModularContent extends Component {
             return <PhotoGrid key={index} input={s} />;
           case 'vertical_statement':
             return <VerticalStatement key={index} input={s} />;
+          case 'image_and_text':
+            return <ImageAndText key={index} input={s} />;
           default:
             return null;
         }

@@ -5,6 +5,7 @@ import Video from './Video';
 import PhotoGallery from './PhotoGallery';
 import PhotoGrid from './PhotoGrid';
 import VerticalStatement from './VerticalStatement';
+import ImageAndText from './ImageAndText';
 
 export {
   Image,
@@ -13,5 +14,6 @@ export {
   Video,
   PhotoGallery,
   PhotoGrid,
-  VerticalStatement
+  VerticalStatement,
+  ImageAndText
 };
