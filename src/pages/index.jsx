@@ -1,29 +1,76 @@
 import { Link, graphql } from 'gatsby';
+import { Box } from 'rebass';
+import Img from 'gatsby-image';
+import { Styled } from 'theme-ui';
 import Layout from '../components/Layout';
-import styled from '@emotion/styled';
 
 const Home = ({ data }) => (
   <Layout>
-    {data.allDatoCmsStory.edges.map(({ node: work }) => (
-      <div key={work.id}>
-        <h6>
-          <Link to={`/story/${work.slug}`}>{work.title}</Link>
-        </h6>
-      </div>
-    ))}
+    <Box
+      sx={{
+        mx: 'auto',
+        ml: 2,
+        mr: 2,
+        mt: 4
+      }}
+    >
+      {data.allDatoCmsStory.edges.map(({ node: data }) => (
+        <Link to={`/story/${data.slug}`} style={{ textDecoration: 'none' }}>
+          <Box
+            sx={{
+              maxWidth: 880,
+              mx: 'auto',
+              mb: 6,
+              textAlign: 'center'
+            }}
+            key={data.id}
+          >
+            <Box
+              sx={{
+                height: 450
+              }}
+              key={data.id}
+            >
+              {data.featuredImage && (
+                <Img
+                  fluid={data.featuredImage.fluid}
+                  style={{ maxHeight: '100%' }}
+                />
+              )}
+            </Box>
+            <Styled.h3>{data.title}</Styled.h3>
+          </Box>
+        </Link>
+      ))}
+    </Box>
   </Layout>
 );
 
 export default Home;
 
 export const query = graphql`
-  query IndexQuery {
+  query POSTS {
     allDatoCmsStory {
       edges {
         node {
-          id
-          title
           slug
+          title
+          issueNumber
+          timeOfYear
+          credits
+          featuredImage {
+            fluid(
+              imgixParams: {
+                fit: "crop"
+                crop: "top,bottom"
+                w: "900"
+                maxW: 900
+                maxH: 400
+              }
+            ) {
+              ...GatsbyDatoCmsSizes
+            }
+          }
         }
       }
     }
