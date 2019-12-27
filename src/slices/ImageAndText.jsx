@@ -17,14 +17,14 @@ const ImageAndText = ({ input }) => (
       gridTemplateColumns: 'repeat(12,1fr)',
       gridTemplateRows: '',
       gridTemplateAreas:
-        '"Content Content Content Content Image Image Image Image Image Image Image Image"'
+        '"Content Content Content Image Image Image Image Image Image Image Image Image"'
     }}
   >
     <Box
       sx={{
         gridArea: 'Content',
         backgroundColor: '#e8e8e8',
-        padding: 3
+        padding: 4
       }}
     >
       <MarkdownTransform
