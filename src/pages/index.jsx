@@ -27,7 +27,7 @@ const Home = ({ data }) => (
           >
             <Box
               sx={{
-                height: 450
+                height: [250, 450]
               }}
               key={data.id}
             >
