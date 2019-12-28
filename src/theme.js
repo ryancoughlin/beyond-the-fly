@@ -106,9 +106,10 @@ export default {
     },
     blockquote: {
       fontSize: 6,
-      fontFamily: 'marydale',
+      fontFamily: 'heading',
       fontWeight: 'bold',
-      color: 'darkBackground'
+      color: 'white',
+      textTransform: 'uppercase'
     },
     code: {
       fontFamily: 'monospace',

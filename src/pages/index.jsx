@@ -20,7 +20,7 @@ const Home = ({ data }) => (
             sx={{
               maxWidth: 880,
               mx: 'auto',
-              mb: 6,
+              mb: 5,
               textAlign: 'center'
             }}
             key={data.id}
@@ -38,7 +38,10 @@ const Home = ({ data }) => (
                 />
               )}
             </Box>
-            <Styled.h3>{data.title}</Styled.h3>
+            <Styled.h3 style={{ marginBottom: 2 }}>{data.title}</Styled.h3>
+            <Styled.p style={{ marginTop: 2, fontSize: 14 }}>
+              {data.overview}
+            </Styled.p>
           </Box>
         </Link>
       ))}
@@ -55,6 +58,7 @@ export const query = graphql`
         node {
           slug
           title
+          overview
           issueNumber
           timeOfYear
           credits
