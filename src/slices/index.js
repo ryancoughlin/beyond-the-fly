@@ -6,6 +6,7 @@ import PhotoGallery from './PhotoGallery';
 import PhotoGrid from './PhotoGrid';
 import VerticalStatement from './VerticalStatement';
 import ImageAndText from './ImageAndText';
+import ImageColumn from './ImageColumn';
 
 export {
   Image,
@@ -15,5 +16,6 @@ export {
   PhotoGallery,
   PhotoGrid,
   VerticalStatement,
-  ImageAndText
+  ImageAndText,
+  ImageColumn
 };

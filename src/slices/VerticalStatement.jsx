@@ -6,25 +6,29 @@ import Img from 'gatsby-image';
 const BodyText = ({ input }) => (
   <Box
     sx={{
-      maxWidth: 800,
+      maxWidth: 1000,
       mx: 'auto',
-      mt: 6,
-      mb: 6,
-      gridGap: 3,
+      mt: 2,
+      mb: 2,
+      gridGap: 2,
       display: 'grid',
       gridTemplateColumns: 'repeat(12,1fr)',
       gridTemplateRows: '',
       gridTemplateAreas:
-        '"Content Content Content Content Content Content Content Image Image Image Image Image"'
+        '"Content Content Content Content Content Content Image Image Image Image Image Image"'
     }}
   >
     <Box
       sx={{
-        gridArea: 'Content'
+        gridArea: 'Content',
+        backgroundColor: 'darkBackground',
+        padding: 4,
+        color: 'white'
       }}
     >
       <MarkdownTransform
         markdown={input.bodyNode.childMarkdownRemark.rawMarkdownBody}
+        type="dark"
       />
     </Box>
     <Box

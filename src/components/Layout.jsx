@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Navigation from '../components/Navigation';
+import Collaborate from '../components/Collaborate';
+
 // import ChangeTheme from '../components/ChangeTheme';
 import { ThemeProvider, Styled } from 'theme-ui';
 import theme from '../theme';
@@ -30,6 +32,7 @@ const TemplateWrapper = ({ children }) => (
             <Navigation />
             {/* <ChangeTheme /> */}
             {children}
+            <Collaborate />
           </>
         )}
       />

@@ -10,7 +10,7 @@ export default ({ data }) => (
       query LogoQuery {
         file(relativePath: { eq: "logotype-yellow.png" }) {
           childImageSharp {
-            fixed(height: 14) {
+            fixed(height: 12) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -20,9 +20,10 @@ export default ({ data }) => (
     render={data => (
       <Box
         sx={{
-          backgroundColor: 'darkBackground',
-          pt: 4,
-          pb: 5
+          pt: 2,
+          pb: 2,
+          pl: 4,
+          backgroundColor: 'darkBackground'
         }}
       >
         <Box

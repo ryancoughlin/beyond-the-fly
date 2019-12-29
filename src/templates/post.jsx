@@ -64,6 +64,25 @@ export const query = graphql`
             }
           }
         }
+        ... on DatoCmsImageColumn {
+          model {
+            apiKey
+          }
+          images {
+            fluid(
+              maxWidth: 1100
+              maxHeight: 400
+              imgixParams: {
+                fm: "jpg"
+                auto: "compress"
+                h: "780"
+                fit: "crop"
+              }
+            ) {
+              ...GatsbyDatoCmsSizes
+            }
+          }
+        }
 
         ... on DatoCmsVerticalStatement {
           model {
@@ -93,7 +112,7 @@ export const query = graphql`
           model {
             apiKey
           }
-          image {
+          images {
             fluid(
               maxWidth: 1100
               maxHeight: 700

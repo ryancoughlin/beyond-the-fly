@@ -29,6 +29,17 @@ export default {
       color: 'white'
     }
   },
+  heading: {
+    textTransform: 'uppercase'
+  },
+  buttons: {
+    dark: {
+      backgroundColor: 'text',
+      color: 'white',
+      fontWeight: '500',
+      fontSize: '3'
+    }
+  },
   styles: {
     root: {
       fontFamily: 'body',

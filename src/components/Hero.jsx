@@ -30,7 +30,6 @@ const Credits = styled.div({
 const Hero = ({ data }) => (
   <Box
     sx={{
-      backgroundColor: 'darkBackground',
       pt: 5,
       pb: 5
     }}

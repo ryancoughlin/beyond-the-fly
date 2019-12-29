@@ -6,7 +6,7 @@ const Quote = ({ input }) => (
   <Box
     sx={{
       maxWidth: 1000,
-      backgroundColor: '#393f46',
+      backgroundColor: 'darkBackground',
       mx: 'auto',
       pt: 4,
       pb: 4,
