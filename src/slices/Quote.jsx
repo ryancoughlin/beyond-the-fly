@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Box } from 'rebass';
+import { Box, Text } from 'rebass';
 import { Styled } from 'theme-ui';
 
 const Quote = ({ input }) => (
@@ -15,7 +15,9 @@ const Quote = ({ input }) => (
       textAlign: 'center'
     }}
   >
-    <Styled.blockquote>{input.quote}</Styled.blockquote>
+    <Text as="blockquote" fontSize={[4, 6]} fontWeight="bold" color="white">
+      {input.quote}
+    </Text>
   </Box>
 );
 

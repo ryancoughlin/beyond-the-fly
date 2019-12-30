@@ -16,8 +16,6 @@ export default class Image extends Component {
             mx: 'auto',
             mt: 2,
             mb: 2,
-            pr: 1,
-            pl: 1,
             gridGap: 2,
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))'
@@ -33,7 +31,12 @@ export default class Image extends Component {
         </Box>
         {input.caption && (
           <Text
-            sx={{ maxWidth: 1000, mx: 'auto', textAlign: 'center' }}
+            sx={{
+              maxWidth: 1000,
+              mx: 'auto',
+              marginBottom: 2,
+              textAlign: 'center'
+            }}
             fontSize={2}
             color="muted"
           >

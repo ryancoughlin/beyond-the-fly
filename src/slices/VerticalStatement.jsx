@@ -17,7 +17,7 @@ const BodyText = ({ input }) => (
       gridTemplateAreas: [
         '"content content content content content content content content content content content content" "image image image image image image image image image image image image"',
         '"content content content content content content image image image image image image"',
-        '"content content content image image image image image image image image image"'
+        '"content content content content content content image image image image image image"'
       ]
     }}
   >
