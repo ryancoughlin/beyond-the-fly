@@ -1,31 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
 import Img from 'gatsby-image';
-import { Colors } from '../styles/theme';
 import { Box, Heading, Text } from 'rebass';
 import { Styled } from 'theme-ui';
-
-const Metadata = styled.h6({
-  margin: '0 24',
-  fontSize: 12
-});
-
-const Dot = styled.span({
-  marginLeft: 8,
-  marginRight: 8
-});
-
-const IssueNumber = styled.span({
-  color: Colors.Global.Primary,
-  fontWeight: 700
-});
-
-const Credits = styled.div({
-  color: Colors.Palette.Text,
-  fontWeight: 400,
-  fontSize: 14
-});
 
 const Hero = ({ data }) => (
   <Box
@@ -80,7 +57,12 @@ const Hero = ({ data }) => (
             </Text>
           )}
         </Box>
-        <Heading fontSize={[6, 9]} color="white">
+        <Heading
+          as="h1"
+          fontSize={[6, 9]}
+          color="white"
+          style={{ textTransform: 'uppercase' }}
+        >
           {data.title}
         </Heading>
         {data.credits && (

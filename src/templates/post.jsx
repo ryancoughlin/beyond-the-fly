@@ -2,11 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import Navigation from '../components/Navigation';
 import ModularContent from '../components/ModularContent';
 
 export default ({ data }) => (
   <Layout>
     <>
+      <Navigation dark />
       <Hero data={data.datoCmsStory} />
       <ModularContent data={data.datoCmsStory.content} />
     </>

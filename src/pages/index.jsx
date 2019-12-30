@@ -1,11 +1,13 @@
 import { Link, graphql } from 'gatsby';
-import { Box } from 'rebass';
+import { Box, Heading } from 'rebass';
 import Img from 'gatsby-image';
 import { Styled } from 'theme-ui';
 import Layout from '../components/Layout';
+import Navigation from '../components/Navigation';
 
 const Home = ({ data }) => (
   <Layout>
+    <Navigation />
     <Box
       sx={{
         mx: 'auto',
@@ -18,7 +20,7 @@ const Home = ({ data }) => (
         <Link to={`/story/${data.slug}`} style={{ textDecoration: 'none' }}>
           <Box
             sx={{
-              maxWidth: 880,
+              maxWidth: 1000,
               mx: 'auto',
               mb: 5,
               textAlign: 'center'
@@ -38,7 +40,14 @@ const Home = ({ data }) => (
                 />
               )}
             </Box>
-            <Styled.h3 style={{ marginBottom: 2 }}>{data.title}</Styled.h3>
+            <Heading
+              fontSize={5}
+              marginTop={3}
+              color="black"
+              style={{ marginBottom: 0 }}
+            >
+              {data.title}
+            </Heading>
             <Styled.p style={{ marginTop: 2, fontSize: 14 }}>
               {data.overview}
             </Styled.p>

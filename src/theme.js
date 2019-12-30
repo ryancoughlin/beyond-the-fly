@@ -5,7 +5,7 @@ export default {
     heading: 'Chivo',
     monospace: 'Menlo, monospace'
   },
-  fontSizes: [9, 12, 14, 16, 20, 24, 32, 44, 52, 64],
+  fontSizes: [9, 12, 14, 16, 20, 24, 32, 44, 52, 60],
   fontWeights: {
     body: 400,
     heading: 900,
@@ -24,13 +24,16 @@ export default {
     secondary: '#30c',
     muted: '#868C96'
   },
+  variants: {
+    nav_link: {
+      color: 'text',
+      textDecoration: 'none'
+    }
+  },
   text: {
     light: {
       color: 'white'
     }
-  },
-  heading: {
-    textTransform: 'uppercase'
   },
   buttons: {
     dark: {
@@ -58,30 +61,28 @@ export default {
       lineHeight: 'heading',
       fontWeight: 'heading',
       letterSpacing: '0.055em',
-      fontSize: 8,
-      textTransform: 'uppercase'
+      textTransform: 'uppercase',
+      fontSize: 8
     },
     h2: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'bold',
-      fontSize: 5
+      fontSize: 7
     },
     h3: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'bold',
-      fontSize: 4,
-      textTransform: 'uppercase'
+      fontSize: 4
     },
     h4: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'bold',
-      textTransform: 'uppercase',
       marginBottom: 0,
       fontSize: 4
     },
@@ -90,7 +91,6 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      textTransform: 'uppercase',
       marginBottom: 0,
       fontSize: 3
     },

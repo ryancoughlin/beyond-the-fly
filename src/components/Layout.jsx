@@ -29,7 +29,6 @@ const TemplateWrapper = ({ children }) => (
         `}
         render={data => (
           <>
-            <Navigation />
             {/* <ChangeTheme /> */}
             {children}
             <Collaborate />

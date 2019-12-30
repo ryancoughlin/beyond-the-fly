@@ -1,43 +1,86 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { Link } from 'gatsby';
-import { Box } from 'rebass';
+import { Box, Link } from 'rebass';
 
-export default ({ data }) => (
-  <StaticQuery
-    query={graphql`
-      query LogoQuery {
-        file(relativePath: { eq: "logotype.png" }) {
-          childImageSharp {
-            fixed(height: 12) {
-              ...GatsbyImageSharpFixed
-            }
+export default ({ dark }) => {
+  const { darkLogo, lightLogo } = useStaticQuery(graphql`
+    query LogoQuery {
+      darkLogo: file(relativePath: { eq: "logotype.png" }) {
+        childImageSharp {
+          fixed(height: 16) {
+            base64
+            width
+            height
+            src
+            srcSet
           }
         }
       }
-    `}
-    render={data => (
+      lightLogo: file(relativePath: { eq: "logotype-white.png" }) {
+        childImageSharp {
+          fixed(height: 16) {
+            base64
+            width
+            height
+            src
+            srcSet
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Box
+      sx={{
+        pt: 4,
+        pb: 2,
+        pl: 4,
+        backgroundColor: dark ? 'darkBackground' : 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
       <Box
         sx={{
-          pt: 2,
-          pb: 2,
-          pl: 4,
-          backgroundColor: 'darkBackground'
+          maxWidth: 800,
+          mx: 'auto'
         }}
       >
-        <Box
+        <Link
+          href="/"
           sx={{
-            maxWidth: 800,
-            mx: 'auto'
+            textDecoration: 'none',
+            fontSize: 2,
+            color: dark ? 'muted' : 'text'
           }}
         >
-          <Link to="/">
-            <Img fadeIn={false} fixed={data.file.childImageSharp.fixed} />
-          </Link>
-          <Link to="/about">About</Link>
-        </Box>
+          Stories
+        </Link>
+
+        <Link href="/" sx={{ mx: 4 }}>
+          <Img
+            fadeIn={false}
+            fixed={
+              dark
+                ? lightLogo.childImageSharp.fixed
+                : darkLogo.childImageSharp.fixed
+            }
+          />
+        </Link>
+        <Link
+          sx={{
+            textDecoration: 'none',
+            fontSize: 2,
+            color: dark ? 'muted' : 'text'
+          }}
+          href="/about"
+        >
+          About
+        </Link>
       </Box>
-    )}
-  />
-);
+    </Box>
+  );
+};
