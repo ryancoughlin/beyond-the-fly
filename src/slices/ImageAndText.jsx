@@ -12,17 +12,19 @@ const ImageAndText = ({ input }) => (
       mb: 2,
       pr: 1,
       pl: 1,
-      gridGap: 2,
+      gridGap: [0, 2],
       display: 'grid',
       gridTemplateColumns: 'repeat(12,1fr)',
       gridTemplateRows: '',
-      gridTemplateAreas:
-        '"Content Content Content Image Image Image Image Image Image Image Image Image"'
+      gridTemplateAreas: [
+        '"content content content content content content content content content content content content" "image image image image image image image image image image image image"',
+        '"content content content image image image image image image image image image"'
+      ]
     }}
   >
     <Box
       sx={{
-        gridArea: 'Content',
+        gridArea: 'content',
         backgroundColor: '#e8e8e8',
         padding: 4,
         display: 'flex'
@@ -40,7 +42,7 @@ const ImageAndText = ({ input }) => (
     </Box>
     <Box
       sx={{
-        gridArea: 'Image'
+        gridArea: 'image'
       }}
     >
       <Img fluid={input.image.fluid} />
