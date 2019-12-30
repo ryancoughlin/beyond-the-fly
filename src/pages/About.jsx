@@ -1,14 +1,10 @@
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import styled from '@emotion/styled';
-
-const Container = styled.div({
-  maxWidth: 700,
-  margin: '0 auto'
-});
+import Navigation from '../components/Navigation';
 
 const About = ({ data: { about } }) => (
   <Layout>
+    <Navigation dark />
     <Container
       dangerouslySetInnerHTML={{
         __html: about.aboutUsNode.childMarkdownRemark.html

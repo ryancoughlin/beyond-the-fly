@@ -2,23 +2,16 @@ require('dotenv').config({
   path: '.env.${process.env.NODE_ENV}'
 });
 
-const {
-  _pathPrefix,
-  shortName,
-  description,
-  themeColor,
-  backgroundColor,
-  _title,
-  _titleAlt,
-  _url,
-  author,
-  logo,
-  favicon,
-  siteLanguage,
-  twitter
-} = require('./src/utils/website');
-
 module.exports = {
+  siteMetadata: {
+    title: 'Beyond the Fly: ',
+    titleTemplate: '%s · Beyond the Fly',
+    description:
+      'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
+    url: 'https://www.beyondthefly.com', // No trailing slash allowed!
+    image: '/icon.jpg', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@ryancoughl'
+  },
   plugins: [
     'gatsby-plugin-theme-ui',
     'gatsby-transformer-sharp',
@@ -26,6 +19,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

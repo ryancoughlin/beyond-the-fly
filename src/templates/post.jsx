@@ -4,14 +4,20 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Navigation from '../components/Navigation';
 import ModularContent from '../components/ModularContent';
+import SEO from '../components/SEO';
 
 export default ({ data }) => (
   <Layout>
-    <>
-      <Navigation dark />
-      <Hero data={data.datoCmsStory} />
-      <ModularContent data={data.datoCmsStory.content} />
-    </>
+    <SEO
+      title={data.datoCmsStory.title}
+      description={data.datoCmsStory.overview || ''}
+      image={data.datoCmsStory.featuredImage.fluid.sizes.src}
+      pathname={data.datoCmsStory.slug}
+      article
+    />
+    <Navigation dark />
+    <Hero data={data.datoCmsStory} />
+    <ModularContent data={data.datoCmsStory.content} />
   </Layout>
 );
 
@@ -19,6 +25,8 @@ export const query = graphql`
   query StoryQuery($slug: String!) {
     datoCmsStory(slug: { eq: $slug }) {
       title
+      overview
+      slug
       issueNumber
       timeOfYear
       credits
