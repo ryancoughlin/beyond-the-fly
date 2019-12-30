@@ -37,7 +37,8 @@ export default {
       backgroundColor: 'text',
       color: 'white',
       fontWeight: '500',
-      fontSize: '3'
+      fontSize: '3',
+      borderRadius: 0
     }
   },
   styles: {

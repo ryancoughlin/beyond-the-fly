@@ -24,12 +24,19 @@ const ImageAndText = ({ input }) => (
       sx={{
         gridArea: 'Content',
         backgroundColor: '#e8e8e8',
-        padding: 4
+        padding: 4,
+        display: 'flex'
       }}
     >
-      <MarkdownTransform
-        markdown={input.textNode.childMarkdownRemark.rawMarkdownBody}
-      />
+      <Box
+        sx={{
+          alignSelf: 'flex-end'
+        }}
+      >
+        <MarkdownTransform
+          markdown={input.textNode.childMarkdownRemark.rawMarkdownBody}
+        />
+      </Box>
     </Box>
     <Box
       sx={{

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Box } from 'rebass';
+import { Box, Heading } from 'rebass';
 import Img from 'gatsby-image';
 import { Styled } from 'theme-ui';
 

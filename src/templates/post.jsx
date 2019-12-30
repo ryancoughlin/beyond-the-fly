@@ -21,11 +21,7 @@ export const query = graphql`
       timeOfYear
       credits
       featuredImage {
-        fluid(
-          maxWidth: 1100
-          maxHeight: 300
-          imgixParams: { fm: "jpg", auto: "compress", h: "500", fit: "crop" }
-        ) {
+        fluid(maxHeight: 300) {
           ...GatsbyDatoCmsSizes
         }
       }

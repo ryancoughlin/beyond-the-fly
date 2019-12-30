@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import { Colors } from '../styles/theme';
-import { Box } from 'rebass';
+import { Box, Heading, Text } from 'rebass';
 import { Styled } from 'theme-ui';
 
 const Metadata = styled.h6({
@@ -31,26 +31,65 @@ const Hero = ({ data }) => (
   <Box
     sx={{
       pt: 5,
-      pb: 5
+      pb: 5,
+      backgroundColor: 'darkBackground'
     }}
   >
     <Box
       sx={{
+        maxWidth: 1000,
         mx: 'auto',
-        maxWidth: 1100
+        mt: 2,
+        mb: 2,
+        pr: 1,
+        pl: 1
       }}
     >
       <Box
         sx={{
           mx: 'auto',
-          maxWidth: 700,
-          textAlign: 'center'
+          textAlign: 'center',
+          marginBottom: 4
         }}
       >
-        <Styled.h1>{data.title}</Styled.h1>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: 3
+          }}
+        >
+          {data.timeOfYear && (
+            <Text
+              color="muted"
+              fontSize="1"
+              fontWeight="heading"
+              style={{ textTransform: 'uppercase' }}
+            >
+              {data.timeOfYear} ·
+            </Text>
+          )}
+          {data.issueNumber && (
+            <Text
+              color="primary"
+              fontSize="1"
+              fontWeight="heading"
+              style={{ textTransform: 'uppercase' }}
+            >
+              &nbsp;Issue 0{data.issueNumber}
+            </Text>
+          )}
+        </Box>
+        <Heading fontSize={[9]} color="white">
+          {data.title}
+        </Heading>
+        {data.credits && (
+          <Text color="muted" fontSize="3">
+            {data.credits}
+          </Text>
+        )}
       </Box>
       {data.featuredImage && <Img fluid={data.featuredImage.fluid} />}
-      {data.credits && <Credits>{data.credits}</Credits>}
     </Box>
   </Box>
 );
