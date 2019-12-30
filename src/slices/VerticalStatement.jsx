@@ -21,7 +21,7 @@ const BodyText = ({ input }) => (
     <Box
       sx={{
         gridArea: 'Content',
-        backgroundColor: 'darkBackground',
+        backgroundColor: '#F2F2F2',
         padding: 4,
         color: 'white'
       }}

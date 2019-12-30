@@ -10,9 +10,9 @@ const HeadingRenderer = (level, props) => {
       return <Styled.h3 {...props} />;
     case 4:
       return <Styled.h4 {...props} />;
-    case 6:
-      return <Styled.h5 {...props} />;
     case 5:
+      return <Styled.h5 {...props} />;
+    case 6:
       return <Styled.h6 {...props} />;
     default:
       return <Styled.h6 {...props} />;

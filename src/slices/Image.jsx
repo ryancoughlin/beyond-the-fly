@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Box, Heading } from 'rebass';
+import { Box, Text } from 'rebass';
 import Img from 'gatsby-image';
 import { Styled } from 'theme-ui';
 
@@ -31,7 +31,15 @@ export default class Image extends Component {
             );
           })}
         </Box>
-        {input.caption && <Styled.h6>{input.caption}</Styled.h6>}
+        {input.caption && (
+          <Text
+            sx={{ maxWidth: 1000, mx: 'auto', textAlign: 'center' }}
+            fontSize={2}
+            color="muted"
+          >
+            {input.caption}
+          </Text>
+        )}
       </>
     );
   }
