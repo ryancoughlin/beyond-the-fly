@@ -11,7 +11,7 @@ export default ({ data }) => (
     <SEO
       title={data.datoCmsStory.title}
       description={data.datoCmsStory.overview || ''}
-      image={data.datoCmsStory.featuredImage.fluid.sizes.src}
+      image={data.datoCmsStory.featuredImage.fluid.src}
       pathname={data.datoCmsStory.slug}
       article
     />

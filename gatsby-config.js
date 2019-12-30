@@ -10,7 +10,7 @@ module.exports = {
       'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
     url: 'https://www.beyondthefly.com', // No trailing slash allowed!
     image: '/icon.jpg', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@ryancoughl'
+    twitterUsername: '@ryancoughlin'
   },
   plugins: [
     'gatsby-plugin-theme-ui',
