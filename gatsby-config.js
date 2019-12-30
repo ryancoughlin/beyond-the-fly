@@ -27,6 +27,18 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Beyond the Fly`,
+        short_name: `Beyond the Fly`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffc500`,
+        display: `standalone`,
+        icon: `src/assets/images/icon.png` // This path is relative to the root of the site.
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`chivo\:400,700,900`],
