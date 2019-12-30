@@ -8,7 +8,8 @@ const BodyText = ({ input }) => (
       maxWidth: 600,
       mx: 'auto',
       pt: 2,
-      pb: 2
+      pb: 2,
+      px: 3
     }}
   >
     <MarkdownTransform
