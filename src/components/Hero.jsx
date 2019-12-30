@@ -63,7 +63,7 @@ const Hero = ({ data }) => (
             <Text
               color="muted"
               fontSize="1"
-              fontWeight="heading"
+              fontWeight="bold"
               style={{ textTransform: 'uppercase' }}
             >
               {data.timeOfYear} ·
@@ -73,14 +73,14 @@ const Hero = ({ data }) => (
             <Text
               color="primary"
               fontSize="1"
-              fontWeight="heading"
+              fontWeight="bold"
               style={{ textTransform: 'uppercase' }}
             >
               &nbsp;Issue 0{data.issueNumber}
             </Text>
           )}
         </Box>
-        <Heading fontSize={[9]} color="white">
+        <Heading fontSize={[6, 9]} color="white">
           {data.title}
         </Heading>
         {data.credits && (

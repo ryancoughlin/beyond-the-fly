@@ -1,14 +1,14 @@
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'Inter UI, sans-serif',
-    heading: 'benton-sans-compressed',
+    body: 'Chivo, sans-serif',
+    heading: 'Chivo',
     monospace: 'Menlo, monospace'
   },
   fontSizes: [9, 12, 14, 16, 20, 24, 32, 44, 52, 64],
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 900,
     bold: 700
   },
   lineHeights: {
@@ -34,10 +34,15 @@ export default {
   },
   buttons: {
     dark: {
-      backgroundColor: 'text',
+      backgroundColor: 'black',
       color: 'white',
-      fontWeight: '500',
-      fontSize: '3',
+      fontWeight: 'bold',
+      fontFamily: 'heading',
+      fontSize: 4,
+      pl: 4,
+      pr: 4,
+      pt: 3,
+      pb: 3,
       borderRadius: 0
     }
   },
@@ -60,23 +65,22 @@ export default {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 6,
-      textTransform: 'uppercase'
+      fontWeight: 'bold',
+      fontSize: 5
     },
     h3: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 5,
+      fontWeight: 'bold',
+      fontSize: 4,
       textTransform: 'uppercase'
     },
     h4: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
+      fontWeight: 'bold',
       textTransform: 'uppercase',
       marginBottom: 0,
       fontSize: 4
@@ -120,8 +124,7 @@ export default {
       fontSize: 6,
       fontFamily: 'heading',
       fontWeight: 'bold',
-      color: 'white',
-      textTransform: 'uppercase'
+      color: 'white'
     },
     code: {
       fontFamily: 'monospace',

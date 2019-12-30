@@ -27,6 +27,23 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`chivo\:400,700,900`],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Chivo`
+          }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md']
@@ -37,14 +54,6 @@ module.exports = {
       options: {
         families: ['Inter UI'],
         urls: ['/fonts/fonts.css']
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        typekit: {
-          id: 'egv8gup'
-        }
       }
     },
     {

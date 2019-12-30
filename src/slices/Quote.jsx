@@ -9,6 +9,8 @@ const Quote = ({ input }) => (
       backgroundColor: 'darkBackground',
       mx: 'auto',
       pt: 4,
+      pr: 5,
+      pl: 5,
       pb: 4,
       textAlign: 'center'
     }}
