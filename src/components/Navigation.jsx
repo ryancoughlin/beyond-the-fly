@@ -38,14 +38,15 @@ export default ({ dark }) => {
         pb: 2,
         backgroundColor: dark ? 'darkBackground' : 'white',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'center'
       }}
     >
       <Box
         sx={{
           maxWidth: 800,
-          mx: 'auto'
+          mx: 'auto',
+          display: 'flex',
+          alignItems: 'end'
         }}
       >
         <Link

@@ -5,7 +5,6 @@ import { Box, Text } from 'rebass';
 export default class LabelValue extends Component {
   render() {
     const { data } = this.props;
-    console.log('TCL: LabelValue -> render -> data', data);
 
     return (
       <Box
@@ -15,7 +14,7 @@ export default class LabelValue extends Component {
       >
         <Text
           sx={{
-            marginBottom: 4,
+            marginBottom: 3,
             textTransform: 'uppercase',
             textAlign: 'center'
           }}
@@ -30,7 +29,7 @@ export default class LabelValue extends Component {
             mx: 'auto',
             gridGap: 0,
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))'
           }}
         >
           {data.map(item => {
