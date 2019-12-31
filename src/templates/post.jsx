@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Navigation from '../components/Navigation';
 import ModularContent from '../components/ModularContent';
+import LabelValue from '../components/LabelValue';
 import SEO from '../components/SEO';
 
 export default ({ data }) => (
@@ -17,6 +18,7 @@ export default ({ data }) => (
     />
     <Navigation dark />
     <Hero data={data.datoCmsStory} />
+    <LabelValue data={data.datoCmsStory.labelValueGrid} />
     <ModularContent data={data.datoCmsStory.content} />
   </Layout>
 );
@@ -33,6 +35,15 @@ export const query = graphql`
       featuredImage {
         fluid(maxHeight: 300) {
           ...GatsbyDatoCmsSizes
+        }
+      }
+      labelValueGrid {
+        ... on DatoCmsLabelValue {
+          model {
+            apiKey
+          }
+          label
+          value
         }
       }
       content {
