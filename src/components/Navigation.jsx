@@ -36,7 +36,6 @@ export default ({ dark }) => {
       sx={{
         pt: 4,
         pb: 2,
-        pl: 4,
         backgroundColor: dark ? 'darkBackground' : 'white',
         display: 'flex',
         justifyContent: 'center',
